@@ -37,6 +37,7 @@ class InterfaceController: WKInterfaceController {
         path.moveToPoint(CGPoint(x: 0, y: 0))
 
         let counterPosition = (self.contentFrame.width/30)*CGFloat(counter)
+//        let roundedPosition = round(counterPosition)
         path.addLineToPoint(CGPoint(x: counterPosition, y: 0))
 
         UIColor.greenColor().setStroke()
