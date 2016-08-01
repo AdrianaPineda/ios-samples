@@ -11,13 +11,13 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var counterView: CounterView!
-    var counter: Int = 30
+    var counter: Double = 30
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
 
     func updateTimer() {
 
-        counter -= 1
+        counter -= 0.1
         if self.counter <= 0 {
             counter = 30
         }

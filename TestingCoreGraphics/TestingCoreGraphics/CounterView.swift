@@ -13,7 +13,7 @@ var countDown = 30
 @IBDesignable
 class CounterView: UIView {
 
-    @IBInspectable var counter: Int = 30 {
+    @IBInspectable var counter: Double = 30 {
         didSet {
             setNeedsDisplay()
         }
