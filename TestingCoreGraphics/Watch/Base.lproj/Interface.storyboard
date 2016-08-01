@@ -8,7 +8,24 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="sHV-ug-TFy">
+                            <items>
+                                <label alignment="left" text="Label" id="hgR-X6-D3r"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" radius="0.0" id="2jB-3a-imX">
+                            <items>
+                                <imageView alignment="left" id="Tma-Ge-Agr"/>
+                            </items>
+                            <color key="backgroundColor" red="0.28235294119999998" green="0.73725490199999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="timerImage" destination="Tma-Ge-Agr" id="Iwq-ZW-vu2"/>
+                    </connections>
+                </controller>
             </objects>
         </scene>
     </scenes>
