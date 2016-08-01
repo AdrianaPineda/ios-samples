@@ -43,15 +43,42 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4q-5s-Kc6" customClass="CounterView" customModule="TestingCoreGraphics" customModuleProvider="target">
+                                <rect key="frame" x="185" y="120" width="230" height="50"/>
+                                <color key="backgroundColor" red="0.28235294119999998" green="0.73725490199999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7Df-Pb-wrs"/>
+                                    <constraint firstAttribute="width" constant="230" id="zYS-Di-AB8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="counter">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
+                                        <color key="value" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Egw-rd-TVy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bGr-4F-Izz"/>
                             <constraint firstItem="Egw-rd-TVy" firstAttribute="top" secondItem="3Ff-jC-Pyb" secondAttribute="bottom" constant="30" id="do2-bQ-T0a"/>
                             <constraint firstItem="3Ff-jC-Pyb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="80" id="iZa-fv-A83"/>
+                            <constraint firstItem="T4q-5s-Kc6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pNA-kH-Mhc"/>
                             <constraint firstItem="3Ff-jC-Pyb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pqE-Zn-CMl"/>
+                            <constraint firstItem="T4q-5s-Kc6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="vmI-83-fgm"/>
+                            <constraint firstItem="3Ff-jC-Pyb" firstAttribute="top" secondItem="T4q-5s-Kc6" secondAttribute="bottom" constant="47" id="xGR-o0-71x"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="xGR-o0-71x"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="counterView" destination="T4q-5s-Kc6" id="Fhl-I8-BCf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
