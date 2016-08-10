@@ -11,6 +11,8 @@ import UIKit
 @IBDesignable
 class LetterView: UILabel {
 
+    // Source http://stackoverflow.com/a/18830509/4196117
+
     let fillColor = UIColor.grayColor()
 
     override func drawRect(rect: CGRect) {
