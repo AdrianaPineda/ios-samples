@@ -12,7 +12,7 @@
 		7A0ACC2F1EA06F5C00B5489C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0ACC2D1EA06F5C00B5489C /* Main.storyboard */; };
 		7A0ACC311EA06F5C00B5489C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A0ACC301EA06F5C00B5489C /* Assets.xcassets */; };
 		7A0ACC341EA06F5C00B5489C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0ACC321EA06F5C00B5489C /* LaunchScreen.storyboard */; };
-		7A0ACC3D1EA071C100B5489C /* RepoSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0ACC3C1EA071C100B5489C /* RepoSearchTableViewController.swift */; };
+		7A0ACC471EA07C3C00B5489C /* MathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0ACC461EA07C3C00B5489C /* MathViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +22,7 @@
 		7A0ACC301EA06F5C00B5489C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A0ACC331EA06F5C00B5489C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A0ACC351EA06F5C00B5489C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A0ACC3C1EA071C100B5489C /* RepoSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoSearchTableViewController.swift; sourceTree = "<group>"; };
+		7A0ACC461EA07C3C00B5489C /* MathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathViewController.swift; sourceTree = "<group>"; };
 		8E2E2CC47A0B12A64EE51427 /* Pods-TestingRxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingRxSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestingRxSwift/Pods-TestingRxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		9C17686D6503C7AFCD09C412 /* Pods_TestingRxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingRxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0E6075FCCE4500BC3B62A9 /* Pods-TestingRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingRxSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestingRxSwift/Pods-TestingRxSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 				7A0ACC301EA06F5C00B5489C /* Assets.xcassets */,
 				7A0ACC321EA06F5C00B5489C /* LaunchScreen.storyboard */,
 				7A0ACC351EA06F5C00B5489C /* Info.plist */,
-				7A0ACC3C1EA071C100B5489C /* RepoSearchTableViewController.swift */,
+				7A0ACC461EA07C3C00B5489C /* MathViewController.swift */,
 			);
 			path = TestingRxSwift;
 			sourceTree = "<group>";
@@ -211,8 +211,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A0ACC471EA07C3C00B5489C /* MathViewController.swift in Sources */,
 				7A0ACC2A1EA06F5C00B5489C /* AppDelegate.swift in Sources */,
-				7A0ACC3D1EA071C100B5489C /* RepoSearchTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
