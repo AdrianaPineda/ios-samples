@@ -8,7 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+import RxSwift
+
+class MathViewController: UIViewController {
+
+    @IBOutlet weak var firstNumber: UITextField!
+    @IBOutlet weak var secondNumber: UITextField!
+    @IBOutlet weak var thirdNumber: UITextField!
+
+    @IBOutlet weak var result: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
