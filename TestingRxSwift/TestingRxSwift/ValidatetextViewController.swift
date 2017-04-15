@@ -18,6 +18,10 @@ class ValidatetextViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var validate: UIButton!
 
+    @IBOutlet weak var nameValidLabel: UILabel!
+
+    @IBOutlet weak var passwordValidLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,9 +36,16 @@ class ValidatetextViewController: UIViewController {
         let everythingIsValid = Observable.combineLatest(nameIsValid, passwordIsValid) { $0 && $1 }
             .shareReplay(1)
 
-
         nameIsValid
             .bind(to: passwordTextField.rx.isEnabled)
+            .disposed(by: disposeBag)
+
+        nameIsValid
+            .bind(to: nameValidLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+
+        passwordIsValid
+            .bind(to: passwordValidLabel.rx.isHidden)
             .disposed(by: disposeBag)
 
         everythingIsValid
