@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		12D373522FBB5EF1561FE40C /* Pods_TestingRxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C17686D6503C7AFCD09C412 /* Pods_TestingRxSwift.framework */; };
 		7A06CB1F1EA19C33007BF2E1 /* ValidatetextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A06CB1E1EA19C33007BF2E1 /* ValidatetextViewController.swift */; };
+		7A06CB271EA1AD4D007BF2E1 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A06CB261EA1AD4D007BF2E1 /* SimpleTableViewController.swift */; };
 		7A0ACC2A1EA06F5C00B5489C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0ACC291EA06F5C00B5489C /* AppDelegate.swift */; };
 		7A0ACC2F1EA06F5C00B5489C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0ACC2D1EA06F5C00B5489C /* Main.storyboard */; };
 		7A0ACC311EA06F5C00B5489C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A0ACC301EA06F5C00B5489C /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		7A06CB1E1EA19C33007BF2E1 /* ValidatetextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatetextViewController.swift; sourceTree = "<group>"; };
+		7A06CB261EA1AD4D007BF2E1 /* SimpleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		7A0ACC261EA06F5C00B5489C /* TestingRxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingRxSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A0ACC291EA06F5C00B5489C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A0ACC2E1EA06F5C00B5489C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				7A0ACC2D1EA06F5C00B5489C /* Main.storyboard */,
 				7A0ACC461EA07C3C00B5489C /* MathViewController.swift */,
 				7A06CB1E1EA19C33007BF2E1 /* ValidatetextViewController.swift */,
+				7A06CB261EA1AD4D007BF2E1 /* SimpleTableViewController.swift */,
 			);
 			path = TestingRxSwift;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				7A0ACC471EA07C3C00B5489C /* MathViewController.swift in Sources */,
 				7A0ACC2A1EA06F5C00B5489C /* AppDelegate.swift in Sources */,
 				7A06CB1F1EA19C33007BF2E1 /* ValidatetextViewController.swift in Sources */,
+				7A06CB271EA1AD4D007BF2E1 /* SimpleTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
