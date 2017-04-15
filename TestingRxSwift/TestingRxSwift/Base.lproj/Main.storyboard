@@ -155,32 +155,42 @@
             <point key="canvasLocation" x="3436" y="883.80809595202402"/>
         </scene>
         <!--Simple Table View Controller-->
-        <scene sceneID="Q7e-q3-cci">
+        <scene sceneID="4z5-oZ-F6J">
             <objects>
-                <tableViewController id="pof-7M-b7Y" customClass="SimpleTableViewController" customModule="TestingRxSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="A05-YC-6cW">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fOR-gV-TPS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="MWT-ad-GVf" customClass="SimpleTableViewController" customModule="TestingRxSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vuo-fG-LQD"/>
+                        <viewControllerLayoutGuide type="bottom" id="YwW-xd-OM8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FqB-H5-0dm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IQF-we-toG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="Cell" id="lUw-vJ-EEK">
+                                        <rect key="frame" x="0.0" y="1" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lUw-vJ-EEK" id="VQm-d6-MFe">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tZv-ol-ung">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tZv-ol-ung" id="VJC-TI-FwC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="pof-7M-b7Y" id="QnS-cm-a1Z"/>
-                            <outlet property="delegate" destination="pof-7M-b7Y" id="kfl-Wp-Rge"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1nC-KP-DaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="IQF-we-toG" id="f4T-RZ-Bbd"/>
+                    </connections>
+                </viewController>
             </objects>
-            <point key="canvasLocation" x="4279" y="884"/>
+            <point key="canvasLocation" x="4229.6000000000004" y="883.80809595202402"/>
         </scene>
         <!--Geolocation View Controller-->
         <scene sceneID="Q7a-Qh-blS">
@@ -267,7 +277,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Simple TableView"/>
                                 <connections>
-                                    <segue destination="pof-7M-b7Y" kind="show" id="kHd-n2-Dib"/>
+                                    <segue destination="MWT-ad-GVf" kind="show" id="iTc-yC-RXJ"/>
                                 </connections>
                             </button>
                         </subviews>
