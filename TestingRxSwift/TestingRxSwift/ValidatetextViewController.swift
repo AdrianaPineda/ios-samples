@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ValidatetextViewController: UIViewController {
+
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var validate: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
