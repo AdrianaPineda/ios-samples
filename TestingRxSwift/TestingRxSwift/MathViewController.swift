@@ -27,7 +27,7 @@ class MathViewController: UIViewController {
         Observable.combineLatest(firstNumber.rx.text.orEmpty, secondNumber.rx.text.orEmpty, thirdNumber.rx.text.orEmpty) { textValue1, textValue2, textValue3 -> Int in
                 return ((Int(textValue1) ?? 0) + (Int(textValue2) ?? 0) + (Int(textValue3) ?? 0))
         }
-        .map { $0.description }
+        .map { $0.description } // "\($0)" also works
         .bind(to: result.rx.text)
         .disposed(by: disposeBag)
 
