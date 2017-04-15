@@ -154,10 +154,10 @@
             </objects>
             <point key="canvasLocation" x="3436" y="883.80809595202402"/>
         </scene>
-        <!--View Controller-->
+        <!--Geolocation View Controller-->
         <scene sceneID="Q7a-Qh-blS">
             <objects>
-                <viewController id="PKS-GC-ad3" sceneMemberID="viewController">
+                <viewController id="PKS-GC-ad3" customClass="GeolocationViewController" customModule="TestingRxSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WMu-R1-d2X"/>
                         <viewControllerLayoutGuide type="bottom" id="0nj-n3-CVu"/>
@@ -165,12 +165,38 @@
                     <view key="view" contentMode="scaleToFill" id="6JX-xn-Lru">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3h-De-wMc">
+                                <rect key="frame" x="101" y="318" width="173" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Open App Preferences"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCn-Oa-zOH">
+                                <rect key="frame" x="166" y="231" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="It seems that geolocation is enabled" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8f7-hg-4Fm">
+                                <rect key="frame" x="51" y="158" width="272" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="geolocationText" destination="8f7-hg-4Fm" id="gbM-NT-HgQ"/>
+                        <outlet property="locationLabel" destination="aCn-Oa-zOH" id="pBK-HM-xy4"/>
+                        <outlet property="openApp" destination="M3h-De-wMc" id="QZA-Ed-UYX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8a9-Jz-LQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4185" y="125"/>
+            <point key="canvasLocation" x="4184.8000000000002" y="124.58770614692655"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JOa-Jp-Vaa">
