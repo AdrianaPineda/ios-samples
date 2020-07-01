@@ -17,7 +17,7 @@ This project uses Swift Package Manager to manage dependencies.
 
 If the dependencies have not been resolved you can:
 
--   Run `xcodebuild -resolvePackageDependencies` in terminal
+-   Run `xcodebuild -resolvePackageDependencies` in the terminal
 -   Or in Xcode go to `File -> Swift Packages -> Resolve Package Versions`
 
 ## How to run
