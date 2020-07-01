@@ -6,10 +6,10 @@ This repository contains a sample app using UICollectionView.
 -   Shows one comic per row when in portrait and 3 when in landscape
 
 Portrait:
-![portrait](./portrait-sample.png)
+![portrait](./portrait.png)
 
 Landscape:
-![landscape](./landscape-sample.png)
+![landscape](./landscape.png)
 
 ## Dependencies
 
