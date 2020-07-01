@@ -24,4 +24,4 @@ If the dependencies have not been resolved you can:
 
 Open `CollectionViewSample.xcodeproj` and run the app.
 
-If you get any errors about dependencies, make sure you have resolved them first (see [Dependencies section](##Dependencies))
+If you get any errors about dependencies, make sure you have resolved them first (see [Dependencies section](#Dependencies))
