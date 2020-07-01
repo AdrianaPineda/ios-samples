@@ -5,11 +5,7 @@ This repository contains a sample app using UICollectionView.
 -   Fetches 15 random comics from [xkcd's API](https://xkcd.com/json.html) and displays them in a collection view.
 -   Shows one comic per row when in portrait and 3 when in landscape
 
-Portrait:
-![portrait](./portrait.png)
-
-Landscape:
-![landscape](./landscape.png)
+![app gif](./app-gif.gif)
 
 ## Dependencies
 
