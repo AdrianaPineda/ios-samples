@@ -15,3 +15,7 @@ If the dependencies have not been resolved you can:
 
 -   Run `xcodebuild -resolvePackageDependencies` in terminal
 -   Or in Xcode go to `File -> Swift Packages -> Resolve Package Versions`
+
+## How to run
+
+Run the `CollectionViewSample` scheme in the device of your choice.
