@@ -12,3 +12,7 @@ This project uses Cocoapods to manage dependencies.
 -   [RxCocoa](https://cocoapods.org/pods/RxCocoa) to use ReactiveX for Swift
 
 If this is the first time opening the project, run `pod install` in terminal in the project directory.
+
+## How to run
+
+Open `TestingRxSwift.xcworkspace` and run the app.
