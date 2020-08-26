@@ -9,5 +9,3 @@ This sample was developed based on the [tutorial from Raywenderlich](https://www
 ## How to run
 
 Open `HitList.xcodeproj` and run the app.
-
-Click the Run button to start the animation.
