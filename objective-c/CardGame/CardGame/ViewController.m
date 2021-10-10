@@ -8,7 +8,8 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+@property (strong, nonatomic) IBOutlet UILabel *flipsLabel;
+@property (nonatomic) int flipCount;
 @end
 
 @implementation ViewController
@@ -16,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (void)setFlipCount:(int)flipCount { // used to keep UI in synced with the property
+    _flipCount = flipCount;
+    self.flipsLabel.text = [NSString stringWithFormat:@"Flips: %d", flipCount];
+
+    NSLog(@"flipCount = %d", self.flipCount);
 }
 
 // IBAction is a typedef for void
@@ -32,6 +40,8 @@
 
     [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
     [sender setTitle:title forState:UIControlStateNormal];
+
+    self.flipCount++;
 }
 
 @end

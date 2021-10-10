@@ -18,6 +18,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVT-fe-Me0">
                                 <rect key="frame" x="167" y="400" width="80" height="96"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="4IE-R8-pds"/>
                                     <constraint firstAttribute="height" constant="96" id="ryM-xf-h4o"/>
@@ -29,14 +30,26 @@
                                     <action selector="cardClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ljQ-wl-mtS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvb-mk-Pne">
+                                <rect key="frame" x="20" y="821" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstItem="FVT-fe-Me0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3wM-WP-khF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kvb-mk-Pne" secondAttribute="trailing" constant="20" id="Ee9-0n-Tss"/>
                             <constraint firstItem="FVT-fe-Me0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="b6S-jQ-mA1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kvb-mk-Pne" secondAttribute="bottom" constant="20" id="x8B-We-Eqs"/>
+                            <constraint firstItem="kvb-mk-Pne" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xte-lD-iP0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="flipsLabel" destination="kvb-mk-Pne" id="9NE-p8-rk4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
