@@ -30,7 +30,7 @@
 }
 
 + (NSArray *)validSuits {
-    return @[@"heart", @"rombo", @"pine", @"tree"];
+    return @[@"🖤", @"♠️", @"♣️", @"♦️"];
 }
 
 - (void)setSuit:(NSString *)suit {

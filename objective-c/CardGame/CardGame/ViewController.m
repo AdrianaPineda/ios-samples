@@ -6,10 +6,13 @@
 //
 
 #import "ViewController.h"
+#import "PlayingCardDeck.h"
 
 @interface ViewController ()
+
 @property (strong, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (nonatomic) int flipCount;
+@property (strong, nonatomic) Deck *deck;
 @end
 
 @implementation ViewController
@@ -17,6 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (Deck *)deck {
+    if (!_deck) {
+        _deck = [[PlayingCardDeck alloc] init];
+    }
+
+    return _deck;
 }
 
 - (void)setFlipCount:(int)flipCount { // used to keep UI in synced with the property
@@ -30,12 +41,19 @@
 - (IBAction)cardClicked:(UIButton *)sender {
     UIImage *cardImage;
     NSString *title;
+
     if ([sender.currentTitle length]) {
         cardImage = [UIImage imageNamed:@"CardBack"];
         title = @"";
     } else {
+        Card *currentCard = [self.deck drawRandomCard];
+        if (!currentCard) {
+            [self handleEmptyDeck];
+            return;
+        }
+
         cardImage = [UIImage imageNamed:@"CardFront"];
-        title = @"A♣️";
+        title = currentCard.contents;
     }
 
     [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
@@ -44,4 +62,7 @@
     self.flipCount++;
 }
 
+- (void)handleEmptyDeck {
+    self.flipsLabel.text = @"Ran out of cards";
+}
 @end

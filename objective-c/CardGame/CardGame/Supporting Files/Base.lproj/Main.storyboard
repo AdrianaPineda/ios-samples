@@ -18,12 +18,11 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVT-fe-Me0">
                                 <rect key="frame" x="167" y="400" width="80" height="96"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="4IE-R8-pds"/>
                                     <constraint firstAttribute="height" constant="96" id="ryM-xf-h4o"/>
                                 </constraints>
-                                <state key="normal" title="A♣️" backgroundImage="CardFront">
+                                <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
@@ -57,7 +56,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CardFront" width="25" height="25"/>
+        <image name="CardBack" width="64" height="96"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
