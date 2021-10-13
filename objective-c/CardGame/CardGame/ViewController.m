@@ -7,12 +7,18 @@
 
 #import "ViewController.h"
 #import "PlayingCardDeck.h"
+#import "CardMatchingGame.h"
 
 @interface ViewController ()
 
+// has to be strong, because even though the view has a strong reference to the views individually, the view does not have a strong pointer to this array
+// IBOutletCollection(UIButton) is only for us, the compiler ignores it. Its just like IBAction
+// Order is *NOT* known for IBOutletCollection. The order will be determined by iOS, regardless of the order I connect the elements
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (strong, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (nonatomic) int flipCount;
 @property (strong, nonatomic) Deck *deck;
+@property (strong, nonatomic) CardMatchingGame *game;
 @end
 
 @implementation ViewController
@@ -24,10 +30,26 @@
 
 - (Deck *)deck {
     if (!_deck) {
-        _deck = [[PlayingCardDeck alloc] init];
+        _deck = [self createDeck];
     }
 
     return _deck;
+}
+
+- (Deck *)createDeck {
+    return [[PlayingCardDeck alloc] init];
+}
+
+- (CardMatchingGame *)game {
+    if (_game) {
+        _game = [self createGame];
+    }
+
+    return _game;
+}
+
+- (CardMatchingGame *)createGame {
+    return [[CardMatchingGame alloc] initWithCardCount:0 deck:self.deck];
 }
 
 - (void)setFlipCount:(int)flipCount { // used to keep UI in synced with the property
