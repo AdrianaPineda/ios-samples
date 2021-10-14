@@ -16,6 +16,7 @@
 // Order is *NOT* known for IBOutletCollection. The order will be determined by iOS, regardless of the order I connect the elements
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (strong, nonatomic) IBOutlet UILabel *flipsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (nonatomic) int flipCount;
 @property (strong, nonatomic) Deck *deck;
 @property (strong, nonatomic) CardMatchingGame *game;
@@ -41,7 +42,7 @@
 }
 
 - (CardMatchingGame *)game {
-    if (_game) {
+    if (!_game) {
         _game = [self createGame];
     }
 
@@ -49,7 +50,7 @@
 }
 
 - (CardMatchingGame *)createGame {
-    return [[CardMatchingGame alloc] initWithCardCount:0 deck:self.deck];
+    return [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] deck:self.deck];
 }
 
 - (void)setFlipCount:(int)flipCount { // used to keep UI in synced with the property
@@ -61,30 +62,54 @@
 
 // IBAction is a typedef for void
 - (IBAction)cardClicked:(UIButton *)sender {
-    UIImage *cardImage;
-    NSString *title;
+//    UIImage *cardImage;
+//    NSString *title;
+//
+//    if ([sender.currentTitle length]) {
+//        cardImage = [UIImage imageNamed:@"CardBack"];
+//        title = @"";
+//    } else {
+//        Card *currentCard = [self.deck drawRandomCard];
+//        if (!currentCard) {
+//            [self handleEmptyDeck];
+//            return;
+//        }
+//
+//        cardImage = [UIImage imageNamed:@"CardFront"];
+//        title = currentCard.contents;
+//    }
+//
+//    [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
+//    [sender setTitle:title forState:UIControlStateNormal];
+//
+//    self.flipCount++;
+    NSUInteger cardIndex = [self.cardButtons indexOfObject:sender];
+    [self.game chooseCardAtIndex:cardIndex];
+    [self updateUI];
+}
 
-    if ([sender.currentTitle length]) {
-        cardImage = [UIImage imageNamed:@"CardBack"];
-        title = @"";
-    } else {
-        Card *currentCard = [self.deck drawRandomCard];
-        if (!currentCard) {
-            [self handleEmptyDeck];
-            return;
-        }
-
-        cardImage = [UIImage imageNamed:@"CardFront"];
-        title = currentCard.contents;
+- (void)updateUI {
+    for (UIButton *cardButton in self.cardButtons) {
+        NSUInteger cardIndex = [self.cardButtons indexOfObject:cardButton];
+        Card *card = [self.game cardAtIndex:cardIndex];
+        [cardButton setTitle:[self titleForCard:card] forState:UIControlStateNormal];
+        [cardButton setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
+        cardButton.enabled = !card.isMatched;
     }
 
-    [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
-    [sender setTitle:title forState:UIControlStateNormal];
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", self.game.score];
+}
 
-    self.flipCount++;
+- (NSString *)titleForCard: (Card *)card {
+    return card.isChosen ? card.contents : @"";
+}
+
+- (UIImage *)backgroundImageForCard: (Card *)card {
+    return [UIImage imageNamed:card.isChosen ? @"CardFront" : @"CardBack"];
 }
 
 - (void)handleEmptyDeck {
     self.flipsLabel.text = @"Ran out of cards";
 }
+
 @end

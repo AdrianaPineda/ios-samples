@@ -78,9 +78,6 @@ static const int COST_TO_CHOOSE = 1;
 
 - (void)matchAnotherCard: (Card *)card {
 
-    self.score -= COST_TO_CHOOSE;
-    card.chosen = YES;
-
     for (Card *anotherCard in self.cards) {
         if (!anotherCard.isChosen || anotherCard.isMatched) {
             continue;
@@ -96,8 +93,11 @@ static const int COST_TO_CHOOSE = 1;
             anotherCard.chosen = NO;
         }
 
-        return;
+        break;
     }
+
+    self.score -= COST_TO_CHOOSE;
+    card.chosen = YES;
 }
 
 - (Card *)cardAtIndex:(NSUInteger)index {

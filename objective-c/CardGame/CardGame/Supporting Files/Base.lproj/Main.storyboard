@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVT-fe-Me0">
-                                <rect key="frame" x="167" y="68" width="80" height="96"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVT-fe-Me0">
+                                <rect key="frame" x="166" y="68" width="80" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="4IE-R8-pds"/>
                                     <constraint firstAttribute="height" constant="96" id="ryM-xf-h4o"/>
@@ -29,8 +29,8 @@
                                     <action selector="cardClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ljQ-wl-mtS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmt-6e-5Bc">
-                                <rect key="frame" x="314" y="68" width="80" height="96"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmt-6e-5Bc">
+                                <rect key="frame" x="312" y="68" width="80" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="aDc-de-cu4"/>
                                     <constraint firstAttribute="height" constant="96" id="aXn-XA-eoO"/>
@@ -42,8 +42,8 @@
                                     <action selector="cardClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OL0-wi-9vq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57J-fb-E9p">
-                                <rect key="frame" x="20" y="199" width="80" height="96"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57J-fb-E9p">
+                                <rect key="frame" x="20" y="204" width="80" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="4yE-k9-7wy"/>
                                     <constraint firstAttribute="width" constant="80" id="DfV-RU-svJ"/>
@@ -55,7 +55,7 @@
                                     <action selector="cardClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4nl-dM-IqO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFH-b1-Ram">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFH-b1-Ram">
                                 <rect key="frame" x="20" y="68" width="80" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="4iH-eO-bfT"/>
@@ -74,8 +74,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wY4-OA-IAe">
-                                <rect key="frame" x="167" y="199" width="80" height="96"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wY4-OA-IAe">
+                                <rect key="frame" x="166" y="204" width="80" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="RjM-U5-cMu"/>
                                     <constraint firstAttribute="height" constant="96" id="Uhe-YF-40j"/>
@@ -87,8 +87,8 @@
                                     <action selector="cardClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p4C-CG-rON"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQ8-9w-thP">
-                                <rect key="frame" x="314" y="199" width="80" height="96"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQ8-9w-thP">
+                                <rect key="frame" x="312" y="204" width="80" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="90c-tV-wy6"/>
                                     <constraint firstAttribute="width" constant="80" id="l6P-vE-9ff"/>
@@ -100,8 +100,8 @@
                                     <action selector="cardClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nwt-fi-9JH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLJ-Vl-aSN">
-                                <rect key="frame" x="314" y="349" width="80" height="96"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLJ-Vl-aSN">
+                                <rect key="frame" x="312" y="340" width="80" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="5G8-Qp-Kkk"/>
                                     <constraint firstAttribute="height" constant="96" id="qyR-ow-7fZ"/>
@@ -113,8 +113,8 @@
                                     <action selector="cardClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IM5-iB-qbq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhp-vD-icc">
-                                <rect key="frame" x="167" y="349" width="80" height="96"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhp-vD-icc">
+                                <rect key="frame" x="166" y="340" width="80" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="KRE-Nz-QCR"/>
                                     <constraint firstAttribute="height" constant="96" id="Lun-BA-OWL"/>
@@ -126,8 +126,8 @@
                                     <action selector="cardClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OAd-Up-WPd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFT-3L-Trw">
-                                <rect key="frame" x="20" y="349" width="80" height="96"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFT-3L-Trw">
+                                <rect key="frame" x="20" y="340" width="80" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="NIc-fB-VxV"/>
                                     <constraint firstAttribute="width" constant="80" id="T8z-zH-9J9"/>
@@ -139,8 +139,8 @@
                                     <action selector="cardClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x7t-4g-FWp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohv-Dg-7HL">
-                                <rect key="frame" x="20" y="496" width="80" height="96"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohv-Dg-7HL">
+                                <rect key="frame" x="20" y="476" width="80" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="jnk-CJ-kNb"/>
                                     <constraint firstAttribute="height" constant="96" id="zX3-N5-Y3K"/>
@@ -152,8 +152,8 @@
                                     <action selector="cardClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TbG-RO-Y4f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUi-lX-Hly">
-                                <rect key="frame" x="167" y="496" width="80" height="96"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUi-lX-Hly">
+                                <rect key="frame" x="166" y="476" width="80" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="1om-99-2gR"/>
                                     <constraint firstAttribute="width" constant="80" id="eTA-jP-Lxa"/>
@@ -165,8 +165,8 @@
                                     <action selector="cardClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7hF-Do-8J6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRN-la-cIG">
-                                <rect key="frame" x="314" y="496" width="80" height="96"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRN-la-cIG">
+                                <rect key="frame" x="312" y="476" width="80" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="PEr-To-bhY"/>
                                     <constraint firstAttribute="height" constant="96" id="iFe-oa-17P"/>
@@ -178,17 +178,55 @@
                                     <action selector="cardClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hTp-eB-ev9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdj-GR-xvz">
+                                <rect key="frame" x="20" y="774" width="63.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
+                            <constraint firstItem="dmt-6e-5Bc" firstAttribute="leading" secondItem="FVT-fe-Me0" secondAttribute="trailing" constant="66" id="4Mp-Ku-kPS"/>
+                            <constraint firstItem="Dhp-vD-icc" firstAttribute="top" secondItem="OFT-3L-Trw" secondAttribute="top" id="52Z-4y-ghn"/>
+                            <constraint firstItem="dmt-6e-5Bc" firstAttribute="top" secondItem="FVT-fe-Me0" secondAttribute="top" id="530-Oi-Vzk"/>
+                            <constraint firstItem="OFT-3L-Trw" firstAttribute="leading" secondItem="57J-fb-E9p" secondAttribute="leading" id="7eO-Wz-725"/>
+                            <constraint firstItem="PUi-lX-Hly" firstAttribute="leading" secondItem="Dhp-vD-icc" secondAttribute="leading" id="7ib-4x-4aD"/>
+                            <constraint firstItem="Dhp-vD-icc" firstAttribute="centerY" secondItem="OFT-3L-Trw" secondAttribute="centerY" id="9JH-4r-Yen"/>
+                            <constraint firstItem="wY4-OA-IAe" firstAttribute="leading" secondItem="57J-fb-E9p" secondAttribute="trailing" constant="66" id="B9K-tg-2n0"/>
+                            <constraint firstItem="lQ8-9w-thP" firstAttribute="leading" secondItem="dmt-6e-5Bc" secondAttribute="leading" id="BhC-RQ-7S7"/>
+                            <constraint firstItem="PUi-lX-Hly" firstAttribute="centerY" secondItem="Ohv-Dg-7HL" secondAttribute="centerY" id="Dah-dy-ryk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kvb-mk-Pne" secondAttribute="trailing" constant="20" id="Ee9-0n-Tss"/>
+                            <constraint firstItem="Sdj-GR-xvz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="F73-XJ-kce"/>
+                            <constraint firstItem="FVT-fe-Me0" firstAttribute="top" secondItem="mFH-b1-Ram" secondAttribute="top" id="HUw-wd-5Bh"/>
+                            <constraint firstItem="Ohv-Dg-7HL" firstAttribute="top" secondItem="OFT-3L-Trw" secondAttribute="bottom" constant="40" id="L2W-DD-4aJ"/>
+                            <constraint firstItem="57J-fb-E9p" firstAttribute="leading" secondItem="mFH-b1-Ram" secondAttribute="leading" id="Qdf-Mb-R2h"/>
+                            <constraint firstItem="mFH-b1-Ram" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="R9T-Ui-Ekb"/>
+                            <constraint firstItem="kvb-mk-Pne" firstAttribute="top" secondItem="Sdj-GR-xvz" secondAttribute="bottom" constant="26" id="bpM-S5-vds"/>
+                            <constraint firstItem="dRN-la-cIG" firstAttribute="centerY" secondItem="PUi-lX-Hly" secondAttribute="centerY" id="d3O-pn-2RY"/>
+                            <constraint firstItem="wY4-OA-IAe" firstAttribute="leading" secondItem="FVT-fe-Me0" secondAttribute="leading" id="gvn-UA-4B6"/>
+                            <constraint firstItem="dRN-la-cIG" firstAttribute="trailing" secondItem="hLJ-Vl-aSN" secondAttribute="trailing" id="hpF-e7-GJP"/>
+                            <constraint firstItem="mFH-b1-Ram" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="i71-xk-h4P"/>
+                            <constraint firstItem="OFT-3L-Trw" firstAttribute="top" secondItem="57J-fb-E9p" secondAttribute="bottom" constant="40" id="lAi-w5-kMF"/>
+                            <constraint firstItem="FVT-fe-Me0" firstAttribute="leading" secondItem="mFH-b1-Ram" secondAttribute="trailing" constant="66" id="lWF-T9-xGI"/>
+                            <constraint firstItem="hLJ-Vl-aSN" firstAttribute="centerY" secondItem="Dhp-vD-icc" secondAttribute="centerY" id="lxl-lv-Tah"/>
+                            <constraint firstItem="lQ8-9w-thP" firstAttribute="top" secondItem="wY4-OA-IAe" secondAttribute="top" id="msE-fx-xE5"/>
+                            <constraint firstItem="lQ8-9w-thP" firstAttribute="leading" secondItem="wY4-OA-IAe" secondAttribute="trailing" constant="66" id="nSc-UM-2e7"/>
+                            <constraint firstItem="Ohv-Dg-7HL" firstAttribute="leading" secondItem="OFT-3L-Trw" secondAttribute="leading" id="rlw-uk-TvH"/>
+                            <constraint firstItem="hLJ-Vl-aSN" firstAttribute="top" secondItem="Dhp-vD-icc" secondAttribute="top" id="uaB-ph-Z4s"/>
+                            <constraint firstItem="57J-fb-E9p" firstAttribute="top" secondItem="mFH-b1-Ram" secondAttribute="bottom" constant="40" id="ug3-RG-fiM"/>
+                            <constraint firstItem="wY4-OA-IAe" firstAttribute="top" secondItem="57J-fb-E9p" secondAttribute="top" id="v8k-7V-xD1"/>
+                            <constraint firstItem="Dhp-vD-icc" firstAttribute="leading" secondItem="wY4-OA-IAe" secondAttribute="leading" id="vWn-E8-9Yp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kvb-mk-Pne" secondAttribute="bottom" constant="20" id="x8B-We-Eqs"/>
+                            <constraint firstItem="hLJ-Vl-aSN" firstAttribute="trailing" secondItem="lQ8-9w-thP" secondAttribute="trailing" id="xpe-LA-v4R"/>
                             <constraint firstItem="kvb-mk-Pne" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xte-lD-iP0"/>
+                            <constraint firstItem="lQ8-9w-thP" firstAttribute="trailing" secondItem="dmt-6e-5Bc" secondAttribute="trailing" id="yGZ-9o-sTB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="flipsLabel" destination="kvb-mk-Pne" id="9NE-p8-rk4"/>
+                        <outlet property="scoreLabel" destination="Sdj-GR-xvz" id="eFq-Vv-wtw"/>
                         <outletCollection property="cardButtons" destination="mFH-b1-Ram" id="drm-vz-jTl"/>
                         <outletCollection property="cardButtons" destination="FVT-fe-Me0" id="8LT-ga-os3"/>
                         <outletCollection property="cardButtons" destination="dmt-6e-5Bc" id="TFB-A6-uAe"/>
