@@ -56,7 +56,7 @@
         // PlayingCard *otherCard = [cards firstObject]; // Alt
         id card = [cards firstObject]; // returns nil if there is no firstObject, but cards[0] can crash if there is no firstObject
 
-        if (![card isKindOfClass:[PlayingCard class]]) {
+        if ([card isKindOfClass:[PlayingCard class]]) {
             PlayingCard *otherCard = (PlayingCard *)card;
             if ([self.suit isEqualToString:otherCard.suit]) {
                 score = 1;
