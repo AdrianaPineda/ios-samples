@@ -17,9 +17,13 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (strong, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *matchTypeControl;
 @property (nonatomic) int flipCount;
 @property (strong, nonatomic) Deck *deck;
 @property (strong, nonatomic) CardMatchingGame *game;
+
+- (IBAction)reDealClicked;
+- (IBAction)matchTypeChanged;
 @end
 
 @implementation ViewController
@@ -50,7 +54,7 @@
 }
 
 - (CardMatchingGame *)createGame {
-    return [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] deck:self.deck];
+    return [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] deck:self.deck matchType: CardMatchTypeThree];
 }
 
 - (void)setFlipCount:(int)flipCount { // used to keep UI in synced with the property
@@ -111,5 +115,14 @@
 - (void)handleEmptyDeck {
     self.flipsLabel.text = @"Ran out of cards";
 }
+
+- (IBAction)reDealClicked {
+    self.game = nil;
+    [self updateUI];
+}
+
+- (IBAction)matchTypeChanged {
+}
+
 
 @end

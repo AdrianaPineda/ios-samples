@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -184,6 +185,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G60-Aw-dFh">
+                                <rect key="frame" x="20" y="710.5" width="83.5" height="34.5"/>
+                                <color key="backgroundColor" red="0.38823529410000002" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Re-deal">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="reDealClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="oNb-dg-bsj"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="on6-ie-PV4">
+                                <rect key="frame" x="247" y="712.5" width="145" height="32"/>
+                                <segments>
+                                    <segment title="2-match"/>
+                                    <segment title="3-match"/>
+                                </segments>
+                                <connections>
+                                    <action selector="matchTypeChanged" destination="BYZ-38-t0r" eventType="valueChanged" id="a1H-gQ-qwq"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
@@ -200,19 +223,24 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kvb-mk-Pne" secondAttribute="trailing" constant="20" id="Ee9-0n-Tss"/>
                             <constraint firstItem="Sdj-GR-xvz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="F73-XJ-kce"/>
                             <constraint firstItem="FVT-fe-Me0" firstAttribute="top" secondItem="mFH-b1-Ram" secondAttribute="top" id="HUw-wd-5Bh"/>
+                            <constraint firstItem="G60-Aw-dFh" firstAttribute="leading" secondItem="Ohv-Dg-7HL" secondAttribute="leading" id="HrI-Rv-RD2"/>
                             <constraint firstItem="Ohv-Dg-7HL" firstAttribute="top" secondItem="OFT-3L-Trw" secondAttribute="bottom" constant="40" id="L2W-DD-4aJ"/>
                             <constraint firstItem="57J-fb-E9p" firstAttribute="leading" secondItem="mFH-b1-Ram" secondAttribute="leading" id="Qdf-Mb-R2h"/>
                             <constraint firstItem="mFH-b1-Ram" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="R9T-Ui-Ekb"/>
                             <constraint firstItem="kvb-mk-Pne" firstAttribute="top" secondItem="Sdj-GR-xvz" secondAttribute="bottom" constant="26" id="bpM-S5-vds"/>
                             <constraint firstItem="dRN-la-cIG" firstAttribute="centerY" secondItem="PUi-lX-Hly" secondAttribute="centerY" id="d3O-pn-2RY"/>
                             <constraint firstItem="wY4-OA-IAe" firstAttribute="leading" secondItem="FVT-fe-Me0" secondAttribute="leading" id="gvn-UA-4B6"/>
+                            <constraint firstItem="on6-ie-PV4" firstAttribute="centerY" secondItem="G60-Aw-dFh" secondAttribute="centerY" id="hhj-gb-HCN"/>
                             <constraint firstItem="dRN-la-cIG" firstAttribute="trailing" secondItem="hLJ-Vl-aSN" secondAttribute="trailing" id="hpF-e7-GJP"/>
                             <constraint firstItem="mFH-b1-Ram" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="i71-xk-h4P"/>
+                            <constraint firstItem="Sdj-GR-xvz" firstAttribute="top" secondItem="G60-Aw-dFh" secondAttribute="bottom" constant="29" id="l8n-Oj-yo8"/>
                             <constraint firstItem="OFT-3L-Trw" firstAttribute="top" secondItem="57J-fb-E9p" secondAttribute="bottom" constant="40" id="lAi-w5-kMF"/>
                             <constraint firstItem="FVT-fe-Me0" firstAttribute="leading" secondItem="mFH-b1-Ram" secondAttribute="trailing" constant="66" id="lWF-T9-xGI"/>
                             <constraint firstItem="hLJ-Vl-aSN" firstAttribute="centerY" secondItem="Dhp-vD-icc" secondAttribute="centerY" id="lxl-lv-Tah"/>
                             <constraint firstItem="lQ8-9w-thP" firstAttribute="top" secondItem="wY4-OA-IAe" secondAttribute="top" id="msE-fx-xE5"/>
                             <constraint firstItem="lQ8-9w-thP" firstAttribute="leading" secondItem="wY4-OA-IAe" secondAttribute="trailing" constant="66" id="nSc-UM-2e7"/>
+                            <constraint firstItem="on6-ie-PV4" firstAttribute="trailing" secondItem="dRN-la-cIG" secondAttribute="trailing" id="qOf-0s-ynT"/>
+                            <constraint firstItem="on6-ie-PV4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G60-Aw-dFh" secondAttribute="trailing" constant="20" id="qQp-nK-xM3"/>
                             <constraint firstItem="Ohv-Dg-7HL" firstAttribute="leading" secondItem="OFT-3L-Trw" secondAttribute="leading" id="rlw-uk-TvH"/>
                             <constraint firstItem="hLJ-Vl-aSN" firstAttribute="top" secondItem="Dhp-vD-icc" secondAttribute="top" id="uaB-ph-Z4s"/>
                             <constraint firstItem="57J-fb-E9p" firstAttribute="top" secondItem="mFH-b1-Ram" secondAttribute="bottom" constant="40" id="ug3-RG-fiM"/>
@@ -226,6 +254,7 @@
                     </view>
                     <connections>
                         <outlet property="flipsLabel" destination="kvb-mk-Pne" id="9NE-p8-rk4"/>
+                        <outlet property="matchTypeControl" destination="on6-ie-PV4" id="78Z-z8-AAW"/>
                         <outlet property="scoreLabel" destination="Sdj-GR-xvz" id="eFq-Vv-wtw"/>
                         <outletCollection property="cardButtons" destination="mFH-b1-Ram" id="drm-vz-jTl"/>
                         <outletCollection property="cardButtons" destination="FVT-fe-Me0" id="8LT-ga-os3"/>
@@ -252,7 +281,7 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
