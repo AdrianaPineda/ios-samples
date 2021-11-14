@@ -10,8 +10,9 @@
 
 // readwrite is default, but we need it because we are re-declaring the property
 @property (nonatomic, readwrite) NSInteger score;
+@property (nonatomic, readwrite) NSInteger currentScore;
+@property (nonatomic, strong) NSArray *lastChosenCards; // of Card
 @property (nonatomic, strong) NSMutableArray *cards; // of Card
-@property (nonatomic, readwrite) CardMatchType matchType;
 @end
 
 @implementation CardMatchingGame
@@ -81,6 +82,42 @@ static const int COST_TO_CHOOSE = 1;
 }
 
 - (void)matchAnotherCard: (Card *)card {
+    card.chosen = YES;
+
+    NSArray *chosenCards = [self currentChosenCards]; // assigning it to chosenCards, will reference to the original array and modify it
+    self.lastChosenCards = chosenCards;
+
+    if ([self isChosingCards:chosenCards]) {
+        self.currentScore = -COST_TO_CHOOSE;
+        self.score += self.currentScore;
+        return;
+    }
+
+    int matchScore = [self matchScore:chosenCards];
+    if (matchScore) {
+        self.currentScore = matchScore * MATCH_BONUS;
+        card.matched = YES;
+    } else {
+        self.currentScore -= MISTMATCH_PENALTY;
+    }
+
+    self.score += self.currentScore;
+    [self matchChosenCards:matchScore chosenCards:chosenCards];
+}
+
+- (int)matchScore: (NSArray *)chosenCards {
+    int score = 0;
+    for (int i = 0; i < chosenCards.count; i++) {
+        Card *card = chosenCards[i];
+        NSRange range = NSMakeRange(i + 1, chosenCards.count - i - 1);
+        NSArray *otherCards = [chosenCards subarrayWithRange:range];
+        score += [card match:otherCards];
+    }
+
+    return score;
+}
+
+- (NSMutableArray *)currentChosenCards {
     NSMutableArray *chosenCards = [[NSMutableArray alloc] init];
     for (Card *anotherCard in self.cards) {
         if (!anotherCard.isChosen || anotherCard.isMatched) {
@@ -90,23 +127,7 @@ static const int COST_TO_CHOOSE = 1;
         [chosenCards addObject:anotherCard];
     }
 
-    card.chosen = YES;
-
-    if ((chosenCards.count + 1) != self.matchType) {
-        self.score -= COST_TO_CHOOSE;
-        return;
-    }
-
-    int matchScore = [card match:chosenCards];
-    if (matchScore) {
-        self.score += matchScore * MATCH_BONUS;
-        card.matched = YES;
-    } else {
-        self.score -= MISTMATCH_PENALTY;
-    }
-
-    [chosenCards addObject:card];
-    [self matchChosenCards:matchScore chosenCards:chosenCards];
+    return chosenCards;
 }
 
 - (void)matchChosenCards:(int)score chosenCards:(NSArray *)chosenCards {
@@ -127,8 +148,13 @@ static const int COST_TO_CHOOSE = 1;
     return self.cards[index];
 }
 
-- (void)updateMatchType: (CardMatchType)matchType {
-    self.matchType = matchType;
+- (Results *)results {
+    BOOL areAllCardsChosen = ![self isChosingCards:self.lastChosenCards];
+    return [[Results alloc] initWithCards:self.lastChosenCards score:self.currentScore allCardsChosen:areAllCardsChosen];
+}
+
+- (BOOL)isChosingCards: (NSArray *)chosenCards {
+    return chosenCards.count != self.matchType;
 }
 
 @end

@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *matchTypeControl;
+@property (strong, nonatomic) IBOutlet UILabel *resultsLabel;
 @property (nonatomic) int flipCount;
 @property (strong, nonatomic) Deck *deck;
 @property (strong, nonatomic) CardMatchingGame *game;
@@ -103,6 +104,26 @@
 
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", self.game.score];
     [self.matchTypeControl setEnabled: !self.game.hasGameStarted];
+    [self configureResultsText];
+}
+
+- (void)configureResultsText {
+    Results *results = [self.game results];
+    NSMutableString *cardsText = [[NSMutableString alloc] init];
+    for (Card *card in results.currentCards) {
+        [cardsText appendString: card.contents];
+    }
+
+    NSString *resultsText = @"";
+    if (!results.allCardsChosen) {
+        resultsText = cardsText;
+    } else if (results.currentScore > 0) {
+        resultsText = [NSString stringWithFormat:@"Matched %@ for %ld points", cardsText, (long)results.currentScore];
+    } else {
+        resultsText = [NSString stringWithFormat:@"%@ don't match! %ld points penalty", cardsText, (long)results.currentScore];
+    }
+
+    [self.resultsLabel setText:resultsText];
 }
 
 - (NSString *)titleForCard: (Card *)card {
@@ -124,7 +145,7 @@
 
 - (IBAction)matchTypeChanged {
     CardMatchType cardMatchType = [self getMatchType];
-    [self.game updateMatchType:cardMatchType];
+    [self.game setMatchType:cardMatchType];
 }
 
 - (CardMatchType)getMatchType {

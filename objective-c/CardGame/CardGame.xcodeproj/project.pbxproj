@@ -21,6 +21,7 @@
 		01349D28270FEB360041E941 /* CardGameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01349D27270FEB360041E941 /* CardGameUITests.m */; };
 		01527AD52711EEC00029E354 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 01527AD42711EEC00029E354 /* PlayingCard.m */; };
 		01527AD8271227F50029E354 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 01527AD7271227F50029E354 /* PlayingCardDeck.m */; };
+		016A6B232741ACC10070A0B3 /* Results.m in Sources */ = {isa = PBXBuildFile; fileRef = 016A6B222741ACC10070A0B3 /* Results.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		01527AD42711EEC00029E354 /* PlayingCard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayingCard.m; sourceTree = "<group>"; };
 		01527AD6271227F50029E354 /* PlayingCardDeck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayingCardDeck.h; sourceTree = "<group>"; };
 		01527AD7271227F50029E354 /* PlayingCardDeck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayingCardDeck.m; sourceTree = "<group>"; };
+		016A6B212741ACC10070A0B3 /* Results.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Results.h; sourceTree = "<group>"; };
+		016A6B222741ACC10070A0B3 /* Results.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Results.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				01527AD7271227F50029E354 /* PlayingCardDeck.m */,
 				012CFCFF27166E4800A4869F /* CardMatchingGame.h */,
 				012CFD0027166E4800A4869F /* CardMatchingGame.m */,
+				016A6B212741ACC10070A0B3 /* Results.h */,
+				016A6B222741ACC10070A0B3 /* Results.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 				01527AD8271227F50029E354 /* PlayingCardDeck.m in Sources */,
 				01349D08270FEB340041E941 /* ViewController.m in Sources */,
 				012CFD0127166E4800A4869F /* CardMatchingGame.m in Sources */,
+				016A6B232741ACC10070A0B3 /* Results.m in Sources */,
 				01527AD52711EEC00029E354 /* PlayingCard.m in Sources */,
 				01349D02270FEB340041E941 /* AppDelegate.m in Sources */,
 				01349D13270FEB360041E941 /* main.m in Sources */,
