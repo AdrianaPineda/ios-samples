@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, CardMatchType) {
 
 @interface CardMatchingGame : NSObject
 @property (nonatomic, readonly) NSInteger score;
+@property (nonatomic, getter=hasGameStarted) BOOL gameStarted;
 
 // designated initializer
 - (instancetype)initWithCardCount: (NSUInteger)count deck: (Deck *)deck matchType: (CardMatchType) matchType;

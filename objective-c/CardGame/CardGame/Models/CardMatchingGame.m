@@ -34,6 +34,7 @@
     if (self) {
         BOOL cardsInitialized = [self initCards:count deck:deck];
         _matchType = matchType;
+        _gameStarted = NO;
         if (!cardsInitialized) {
             self = nil;
         }
@@ -64,6 +65,8 @@ static const int MISTMATCH_PENALTY = 2; // better because its typed
 static const int MATCH_BONUS = 4;
 static const int COST_TO_CHOOSE = 1;
 - (void)chooseCardAtIndex:(NSUInteger)index {
+    self.gameStarted = YES;
+
     Card *card = [self cardAtIndex:index];
     if (card.isMatched) {
         return;

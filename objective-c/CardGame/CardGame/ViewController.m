@@ -54,7 +54,7 @@
 }
 
 - (CardMatchingGame *)createGame {
-    return [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] deck:self.deck matchType: CardMatchTypeTwo];
+    return [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] deck:self.deck matchType: [self getMatchType]];
 }
 
 - (void)setFlipCount:(int)flipCount { // used to keep UI in synced with the property
@@ -102,6 +102,7 @@
     }
 
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", self.game.score];
+    [self.matchTypeControl setEnabled: !self.game.hasGameStarted];
 }
 
 - (NSString *)titleForCard: (Card *)card {
@@ -122,14 +123,17 @@
 }
 
 - (IBAction)matchTypeChanged {
+    CardMatchType cardMatchType = [self getMatchType];
+    [self.game updateMatchType:cardMatchType];
+}
+
+- (CardMatchType)getMatchType {
     switch (self.matchTypeControl.selectedSegmentIndex) {
         case 0:
-            [self.game updateMatchType:CardMatchTypeTwo];
-            break;
+            return CardMatchTypeTwo;
 
         default:
-            [self.game updateMatchType:CardMatchTypeThree];
-            break;
+            return CardMatchTypeThree;
     }
 }
 
