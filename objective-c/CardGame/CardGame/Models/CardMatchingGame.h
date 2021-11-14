@@ -21,6 +21,7 @@ typedef NS_ENUM(NSInteger, CardMatchType) {
 - (instancetype)initWithCardCount: (NSUInteger)count deck: (Deck *)deck matchType: (CardMatchType) matchType;
 - (void)chooseCardAtIndex: (NSUInteger)index;
 - (Card *)cardAtIndex: (NSUInteger)index;
+- (void)updateMatchType: (CardMatchType)matchType;
 
 @end
 

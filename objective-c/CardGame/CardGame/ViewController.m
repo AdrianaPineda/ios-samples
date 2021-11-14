@@ -54,7 +54,7 @@
 }
 
 - (CardMatchingGame *)createGame {
-    return [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] deck:self.deck matchType: CardMatchTypeThree];
+    return [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] deck:self.deck matchType: CardMatchTypeTwo];
 }
 
 - (void)setFlipCount:(int)flipCount { // used to keep UI in synced with the property
@@ -122,6 +122,15 @@
 }
 
 - (IBAction)matchTypeChanged {
+    switch (self.matchTypeControl.selectedSegmentIndex) {
+        case 0:
+            [self.game updateMatchType:CardMatchTypeTwo];
+            break;
+
+        default:
+            [self.game updateMatchType:CardMatchTypeThree];
+            break;
+    }
 }
 
 

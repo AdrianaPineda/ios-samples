@@ -52,13 +52,28 @@
 - (int)match:(NSArray *)cards {
     int score = 0;
 
-    for (PlayingCard *otherCard in cards) {
-        if ([self.suit isEqualToString:otherCard.suit]) {
-            score += 1;
-        } else if (self.rank == otherCard.rank) {
-            score += 4;
+    NSMutableArray *currentCards = [[NSMutableArray alloc] initWithArray:cards];
+    [currentCards addObject:self];
+
+    for (int i = 0; i < currentCards.count; i++) {
+        for (int j = i + 1; j < currentCards.count; j++) {
+            PlayingCard *firstCard = currentCards[i];
+            PlayingCard *secondCard = currentCards[j];
+
+            if ([firstCard.suit isEqualToString:secondCard.suit]) {
+                score += 1;
+            } else if (firstCard.rank == secondCard.rank) {
+                score += 4;
+            }
         }
     }
+//    for (PlayingCard *otherCard in currentCards) {
+//        if ([self.suit isEqualToString:otherCard.suit]) {
+//            score += 1;
+//        } else if (self.rank == otherCard.rank) {
+//            score += 4;
+//        }
+//    }
 
 //    if ([cards count] == 1) {
 //        // PlayingCard *otherCard = [cards firstObject]; // Alt
