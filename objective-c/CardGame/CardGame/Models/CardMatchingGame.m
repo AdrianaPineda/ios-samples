@@ -149,6 +149,9 @@ static const int COST_TO_CHOOSE = 1;
 }
 
 - (Results *)results {
+    if (!self.gameStarted) {
+        return nil;
+    }
     BOOL areAllCardsChosen = ![self isChosingCards:self.lastChosenCards];
     return [[Results alloc] initWithCards:self.lastChosenCards score:self.currentScore allCardsChosen:areAllCardsChosen];
 }

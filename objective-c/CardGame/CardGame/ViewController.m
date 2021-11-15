@@ -109,6 +109,11 @@
 
 - (void)configureResultsText {
     Results *results = [self.game results];
+    if (!results) {
+        [self.resultsLabel setText:@"Results"];
+        return;
+    }
+
     NSMutableString *cardsText = [[NSMutableString alloc] init];
     for (Card *card in results.currentCards) {
         [cardsText appendString: card.contents];
@@ -139,6 +144,7 @@
 }
 
 - (IBAction)reDealClicked {
+    self.deck = nil;
     self.game = nil;
     [self updateUI];
 }
