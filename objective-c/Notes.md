@@ -325,3 +325,99 @@ NSMutableAttributedString *labelText = [myLabel.attributedText mutableCopy];
 [labelText setAttributes:...];
 myLabel.attributedText = labelText;
 ```
+
+## UITextView
+
+Scrollable, editable/selectable view of a mutable attributed string
+
+Similar to UILable, but multi-line.
+
+We can set a NSMutableAttributedString & NSFont
+
+## View Controller lifecycle
+Sequence of messages (series of methods) sent to UIViewController when things happen
+
+Why does this matter?
+* to override them when needed
+
+### How is it?
+**Start of the lifecycle**
+- Creation: most VC's are created out of the storyboard
+
+**What then?**
+- outlet setting
+- appearing and disappearing
+- geometry changes (device rotation for example)
+- low-memory situations
+
+at each stage, iOS invokes method(s) on the Controller
+
+⚠️ always let `super` have a chance in lifecycle methods
+
+### viewDidLoad
+- Outlets have been set
+- A good  place to put a lot of setup code
+- Only called once
+- Bounds (geometry) of the view **not** finalized at this point, so ⚠️ dont ⚠️ initialize things that are geometry-dependent here
+
+### viewWillAppear
+- Call just before the view appears on screen
+- Can be called multiple times
+- View will only get "loaded" once, but it might appear and disappear a lot
+- Do something here if things you display are changing while your MVC is off-screen
+- We can do stuff here to optimize performance (i.e doing a network call in viewDidLoad might not be needed if the view never appears and we wasted resources on it)
+- The view's geometry is set here so we *could* set some initialization based on geometry here, but there is a better place to do geometry-based initialization. However, geometry *can* change after viewWillAppear (for example when view rotates we wont get viewWillAppear called)
+
+### viewWillDisappear
+- Where we put "remember what's going on" and cleanup code
+- Stop using resources
+- Don't do anything time-consuming here or app will be sluggish, maybe kick off a thread to do what needs doing here
+
+### view{Will,Did}LayoutSubviews
+- Called any time a view's frame changed and its subviews were thus re-layed out (i.e. autorotation)
+- We can rese the frames of the subviews here or st other geomety-affecting properties
+- Between "will" and "did", autolayout will happen
+
+### Autorotation
+- Happens only if:
+  - `shouldAutorotate` returns `YES`
+  - `supportedInterfaceOrientations` returns the new orientation
+  - The application allows rotation to that orientation (defined in Info.plist file)
+
+### didReceiveMemoryWarning
+- In low-memory situations this method is called.
+- Rarely happens
+- Images, video and/or sounds use a lot of memory. Small dictionaries dont use a lot of memory
+- If it is called, we might need to release anything "big" that can be recreated (i.e an alternate image or something thats not on screen)
+
+### awakeFromNib
+- Happens before outlets are set
+- Put things here that can't wait until `viewDidLoad`
+- This method is sent to all objects that come out of a storyboard
+- UIViewController's designated initializer is `initWithNibName:bundle:`
+
+### Summary
+1. Instantiated (from storyboard)
+1. awakeFromNib
+1. outlets get set
+1. viewDidLoad
+1. [when geometry is determined] viewWillLayoutSubviews & viewDidLayoutSubviews
+1. [can happen repeatedly as the VC appears and disappears from the screen] 
+    1. viewWillAppear and viewDidAppear
+    1. [when geometry changes again while visible i.e rotation] viewWillLayoutSubviews & viewDidLayoutSubviews
+    1. viewWillDisappear and viewDidDisappear
+1. [if memory gets low] didReceiveMemoryWarning
+
+## NSNotification
+The "radio station"
+
+### NSNotificationCenter
+Default notification center. 
+
+Access it via `[NSNotificationCenter defaultCenter]`
+
+If we want to "listen to a radio station" call `addObserver:selector:name:object:`
+- observer: the object to get notified
+- selector: method to invoke if something happens
+- name: name of the sation (a constant)
+- sender: whose changes you are interested in (nil is anyone's)
