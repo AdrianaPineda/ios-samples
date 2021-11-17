@@ -420,4 +420,29 @@ If we want to "listen to a radio station" call `addObserver:selector:name:object
 - observer: the object to get notified
 - selector: method to invoke if something happens
 - name: name of the sation (a constant)
-- sender: whose changes you are interested in (nil is anyone's)
+- object: whose changes you are interested in (nil is anyone's)
+
+The method that is called when there are broadcasts `selector`
+- selector:notification
+
+The `notification` has the following properties:
+- name: name passed above
+- object: object sending the notification
+- userInfo: notification-specific info about what happened
+
+When we are done listening, we need to "tune out". Failure to remove yourself can sometimes result in crashes because the `NSNotificationCenter` keeps an 'unsafe retained' pointer to you (not strong nor weak). Its 'unsafe retained' due to backwards compatibility, it should be weak.
+'unsafe retained' means is the if you go out of the heap without calling the `remove` method first, the notification center might try to send a notification and crash the app.
+- removeObserver: // to remove from all radio stations. If Im not an observer, this method call wont fail
+- removeObserver:name:object // to remove from a specific station
+
+We also need to remove ourselves when the view goes off screen. Or we can also remove ourselves in a method called `dealloc` (called when you leave the heap)
+
+```objc
+- (void)dealloc {
+  // be careful in this method. can't access properties. you are almost gone from heap
+  // gets called just before the object leaves from the heap. All properties are nil
+
+  // just to fix unsafe retained pointer
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+```
