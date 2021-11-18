@@ -5,11 +5,10 @@
 //  Created by Adriana Pineda on 10/7/21.
 //
 
-#import "ViewController.h"
-#import "PlayingCardDeck.h"
+#import "CardGameViewController.h"
 #import "CardMatchingGame.h"
 
-@interface ViewController ()
+@interface CardGameViewController ()
 
 // has to be strong, because even though the view has a strong reference to the views individually, the view does not have a strong pointer to this array
 // IBOutletCollection(UIButton) is only for us, the compiler ignores it. Its just like IBAction
@@ -27,7 +26,7 @@
 - (IBAction)matchTypeChanged;
 @end
 
-@implementation ViewController
+@implementation CardGameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,8 +41,8 @@
     return _deck;
 }
 
-- (Deck *)createDeck {
-    return [[PlayingCardDeck alloc] init];
+- (Deck *)createDeck { // abstract
+    return nil;
 }
 
 - (CardMatchingGame *)game {

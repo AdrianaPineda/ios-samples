@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "TextStatsViewController.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *headlineLabel;
@@ -58,5 +59,14 @@
 
 - (IBAction)unoutlineBodySelection {
     [self.bodyTextView.textStorage removeAttribute:NSStrokeWidthAttributeName range:self.bodyTextView.selectedRange];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"Analyze Text"]) {
+        if ([segue.destinationViewController isKindOfClass:[TextStatsViewController class]]) {
+            TextStatsViewController *viewController = (TextStatsViewController *)segue.destinationViewController;
+            viewController.textToAnalyze = self.bodyTextView.attributedText;
+        }
+    }
 }
 @end

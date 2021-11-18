@@ -1,3 +1,4 @@
+https://itunes.apple.com/us/course/developing-ios-7-apps-for-iphone-and-ipad/id733644550
 # Creating objects
 
 We use alloc and init, but we also use class methods. Sometimes both a class creator method and init method exist
@@ -446,3 +447,13 @@ We also need to remove ourselves when the view goes off screen. Or we can also r
   [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 ```
+
+# Scene
+We call a particular layout of a View for a Controller in Xcode a "scene"
+
+# Segue 
+When the segue is being prepared `prepareForSegue:sender:`, the outlets are not set on the destination view controller. It happens between `awakeFromNib` and `viewDidLoad`.
+
+We can prevent a segue from happening: `shouldPerformSegueWithIdentifier:sender`
+
+Navigation controller inside a tabbar controller is ok. What's not so common is a tabbar controller inside a navbar controller
