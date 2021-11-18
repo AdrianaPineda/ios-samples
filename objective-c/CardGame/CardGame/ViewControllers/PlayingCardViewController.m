@@ -18,4 +18,8 @@
     return [[PlayingCardDeck alloc] init];
 }
 
+- (BOOL)redeal {
+    return YES;
+}
+
 @end

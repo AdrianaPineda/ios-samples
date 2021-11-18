@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Deck.h"
+#import "CardMatchingGame.h"
 
 @interface CardGameViewController : UIViewController
+
+@property BOOL redeal;
 
 // protected - for subclasses
 - (Deck *)createDeck; // abstract

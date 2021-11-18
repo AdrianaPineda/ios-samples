@@ -54,7 +54,7 @@
 }
 
 - (CardMatchingGame *)createGame {
-    return [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] deck:self.deck matchType: [self getMatchType]];
+    return [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] deck:self.deck matchType: [self getMatchType] redeal: self.redeal];
 }
 
 - (void)setFlipCount:(int)flipCount { // used to keep UI in synced with the property
