@@ -54,7 +54,7 @@
 }
 
 - (CardMatchingGame *)createGame {
-    return [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] deck:self.deck matchType: [self getMatchType] redeal: self.redeal];
+    return [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] deck:self.deck matchType: [self getMatchType] hideCards:self.hideCards];
 }
 
 - (void)setFlipCount:(int)flipCount { // used to keep UI in synced with the property
@@ -154,13 +154,7 @@
 }
 
 - (CardMatchType)getMatchType {
-    switch (self.matchTypeControl.selectedSegmentIndex) {
-        case 0:
-            return CardMatchTypeTwo;
-
-        default:
-            return CardMatchTypeThree;
-    }
+    return 0;
 }
 
 

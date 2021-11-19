@@ -14,8 +14,12 @@
     return [[SetDeck alloc] init];
 }
 
-- (BOOL)redeal {
-    return NO;
+- (BOOL)hideCards {
+    return YES;
+}
+
+- (CardMatchType)getMatchType {
+    return CardMatchTypeThree;
 }
 
 @end

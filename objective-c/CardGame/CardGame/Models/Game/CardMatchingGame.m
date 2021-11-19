@@ -13,7 +13,7 @@
 @property (nonatomic, readwrite) NSInteger currentScore;
 @property (nonatomic, strong) NSArray *lastChosenCards; // of Card
 @property (nonatomic, strong) NSMutableArray *cards; // of Card
-@property (nonatomic) BOOL redeal;
+@property (nonatomic) BOOL hideCards;
 @end
 
 @implementation CardMatchingGame
@@ -30,14 +30,14 @@
     return nil;
 }
 
-- (instancetype)initWithCardCount:(NSUInteger)count deck:(Deck *)deck matchType: (CardMatchType) matchType redeal: (BOOL)redeal {
+- (instancetype)initWithCardCount:(NSUInteger)count deck:(Deck *)deck matchType: (CardMatchType) matchType hideCards:(BOOL)hideCards {
     self = [super init];
 
     if (self) {
         BOOL cardsInitialized = [self initCards:count deck:deck];
         _matchType = matchType;
         _gameStarted = NO;
-        _redeal = redeal;
+        _hideCards = hideCards;
         if (!cardsInitialized) {
             self = nil;
         }
@@ -104,7 +104,7 @@ static const int COST_TO_CHOOSE = 1;
     }
 
     self.score += self.currentScore;
-    if (self.redeal) {
+    if (self.hideCards) {
         [self matchChosenCards:matchScore chosenCards:chosenCards];
     }
 }

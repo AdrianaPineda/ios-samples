@@ -9,6 +9,7 @@
 #import "PlayingCardDeck.h"
 
 @interface PlayingCardViewController ()
+@property (strong, nonatomic) IBOutlet UISegmentedControl *matchTypeControl;
 
 @end
 
@@ -18,8 +19,19 @@
     return [[PlayingCardDeck alloc] init];
 }
 
-- (BOOL)redeal {
+- (BOOL)hideCards {
     return YES;
 }
+
+- (CardMatchType)getMatchType {
+    switch (self.matchTypeControl.selectedSegmentIndex) {
+        case 0:
+            return CardMatchTypeTwo;
+
+        default:
+            return CardMatchTypeThree;
+    }
+}
+
 
 @end

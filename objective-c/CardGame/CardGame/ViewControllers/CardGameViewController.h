@@ -12,10 +12,11 @@
 
 @interface CardGameViewController : UIViewController
 
-@property BOOL redeal;
+@property BOOL hideCards;
 
 // protected - for subclasses
 - (Deck *)createDeck; // abstract
+- (CardMatchType)getMatchType; // abstract
 
 @end
 
