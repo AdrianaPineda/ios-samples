@@ -9,23 +9,24 @@
 
 @interface HistoryViewController ()
 
+@property (strong, nonatomic) IBOutlet UITextView *historyTextView;
+
 @end
 
 @implementation HistoryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self configureContents];
 }
 
-/*
-#pragma mark - Navigation
+- (void)configureContents {
+    NSMutableAttributedString *textViewContents = [[NSMutableAttributedString alloc] init];
+    for (NSAttributedString *content in self.historyContents) {
+        [textViewContents appendAttributedString:content];
+        [textViewContents appendAttributedString: [[NSAttributedString alloc] initWithString:@"\n"]];
+    }
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [self.historyTextView setAttributedText:textViewContents];
 }
-*/
-
 @end

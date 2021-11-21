@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVT-fe-Me0">
-                                <rect key="frame" x="100" y="112" width="40" height="60"/>
+                                <rect key="frame" x="100" y="100" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -28,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmt-6e-5Bc">
-                                <rect key="frame" x="180" y="112" width="40" height="60"/>
+                                <rect key="frame" x="180" y="100" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -38,7 +38,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMB-58-VwX">
-                                <rect key="frame" x="260" y="112" width="40" height="60"/>
+                                <rect key="frame" x="260" y="100" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -48,7 +48,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgU-tt-8vG">
-                                <rect key="frame" x="340" y="112" width="40" height="60"/>
+                                <rect key="frame" x="340" y="100" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -58,7 +58,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcY-5f-saO">
-                                <rect key="frame" x="260" y="212" width="40" height="60"/>
+                                <rect key="frame" x="260" y="190" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -68,7 +68,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2K-Da-pdl">
-                                <rect key="frame" x="340" y="212" width="40" height="60"/>
+                                <rect key="frame" x="340" y="190" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -78,7 +78,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tou-2L-FDq">
-                                <rect key="frame" x="260" y="312" width="40" height="60"/>
+                                <rect key="frame" x="260" y="280" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -88,7 +88,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vP7-03-fIm">
-                                <rect key="frame" x="340" y="312" width="40" height="60"/>
+                                <rect key="frame" x="340" y="280" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -98,7 +98,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0I-i0-jgK">
-                                <rect key="frame" x="260" y="412" width="40" height="60"/>
+                                <rect key="frame" x="260" y="370" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -108,7 +108,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXq-N7-Rey">
-                                <rect key="frame" x="340" y="412" width="40" height="60"/>
+                                <rect key="frame" x="340" y="370" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -118,7 +118,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKw-99-15S">
-                                <rect key="frame" x="20" y="500" width="40" height="60"/>
+                                <rect key="frame" x="20" y="460" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -128,7 +128,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57J-fb-E9p">
-                                <rect key="frame" x="20" y="212" width="40" height="60"/>
+                                <rect key="frame" x="20" y="190" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -138,7 +138,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFH-b1-Ram">
-                                <rect key="frame" x="20" y="112" width="40" height="60"/>
+                                <rect key="frame" x="20" y="100" width="40" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="4iH-eO-bfT"/>
                                     <constraint firstAttribute="height" constant="60" id="pR1-Sz-0XD"/>
@@ -151,14 +151,14 @@
                                     <action selector="cardClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Vy-sn-lVz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="Flips: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvb-mk-Pne">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Flips: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvb-mk-Pne">
                                 <rect key="frame" x="20" y="741.5" width="55" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wY4-OA-IAe">
-                                <rect key="frame" x="100" y="212" width="40" height="60"/>
+                                <rect key="frame" x="100" y="190" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -168,7 +168,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQ8-9w-thP">
-                                <rect key="frame" x="180" y="212" width="40" height="60"/>
+                                <rect key="frame" x="180" y="190" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -178,7 +178,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLJ-Vl-aSN">
-                                <rect key="frame" x="180" y="312" width="40" height="60"/>
+                                <rect key="frame" x="180" y="280" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -188,7 +188,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhp-vD-icc">
-                                <rect key="frame" x="100" y="312" width="40" height="60"/>
+                                <rect key="frame" x="100" y="280" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -198,7 +198,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFT-3L-Trw">
-                                <rect key="frame" x="20" y="312" width="40" height="60"/>
+                                <rect key="frame" x="20" y="280" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -208,7 +208,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohv-Dg-7HL">
-                                <rect key="frame" x="20" y="412" width="40" height="60"/>
+                                <rect key="frame" x="20" y="370" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -218,7 +218,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUi-lX-Hly">
-                                <rect key="frame" x="100" y="412" width="40" height="60"/>
+                                <rect key="frame" x="100" y="370" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -228,7 +228,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRN-la-cIG">
-                                <rect key="frame" x="180" y="412" width="40" height="60"/>
+                                <rect key="frame" x="180" y="370" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -238,7 +238,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQb-hk-tm6">
-                                <rect key="frame" x="260" y="500" width="40" height="60"/>
+                                <rect key="frame" x="260" y="460" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -248,7 +248,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A47-jf-nck">
-                                <rect key="frame" x="340" y="500" width="40" height="60"/>
+                                <rect key="frame" x="340" y="460" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -258,7 +258,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxw-tj-XBb">
-                                <rect key="frame" x="260" y="600" width="40" height="60"/>
+                                <rect key="frame" x="260" y="550" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -268,7 +268,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKq-L9-BPe">
-                                <rect key="frame" x="340" y="600" width="40" height="60"/>
+                                <rect key="frame" x="340" y="550" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -278,7 +278,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOu-1z-ga6">
-                                <rect key="frame" x="180" y="500" width="40" height="60"/>
+                                <rect key="frame" x="180" y="460" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -288,7 +288,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xU9-aI-5qS">
-                                <rect key="frame" x="100" y="500" width="40" height="60"/>
+                                <rect key="frame" x="100" y="460" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -298,7 +298,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aq7-hd-IHd">
-                                <rect key="frame" x="100" y="600" width="40" height="60"/>
+                                <rect key="frame" x="100" y="550" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -308,7 +308,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYy-zj-J0a">
-                                <rect key="frame" x="180" y="600" width="40" height="60"/>
+                                <rect key="frame" x="180" y="550" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -317,13 +317,13 @@
                                     <action selector="cardClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pea-4a-lP7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdj-GR-xvz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdj-GR-xvz">
                                 <rect key="frame" x="20" y="696.5" width="63.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G60-Aw-dFh">
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G60-Aw-dFh">
                                 <rect key="frame" x="20" y="638" width="83.5" height="34.5"/>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -335,7 +335,7 @@
                                     <action selector="reDealClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="oNb-dg-bsj"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="on6-ie-PV4">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="on6-ie-PV4">
                                 <rect key="frame" x="235" y="640" width="145" height="32"/>
                                 <segments>
                                     <segment title="2-match"/>
@@ -345,14 +345,14 @@
                                     <action selector="matchTypeChanged" destination="BYZ-38-t0r" eventType="valueChanged" id="a1H-gQ-qwq"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" ambiguous="YES" text="Results" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQl-o0-mhC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Results" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQl-o0-mhC">
                                 <rect key="frame" x="179" y="782.5" width="56" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaV-VC-De6">
-                                <rect key="frame" x="20" y="600" width="40" height="60"/>
+                                <rect key="frame" x="20" y="550" width="40" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="CardBack">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -366,7 +366,7 @@
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstItem="IMB-58-VwX" firstAttribute="height" secondItem="mFH-b1-Ram" secondAttribute="height" id="08P-pl-bcp"/>
-                            <constraint firstItem="CKw-99-15S" firstAttribute="top" secondItem="Ohv-Dg-7HL" secondAttribute="bottom" constant="28" id="0Af-ed-znR"/>
+                            <constraint firstItem="CKw-99-15S" firstAttribute="top" secondItem="Ohv-Dg-7HL" secondAttribute="bottom" constant="30" id="0Af-ed-znR"/>
                             <constraint firstItem="xU9-aI-5qS" firstAttribute="width" secondItem="mFH-b1-Ram" secondAttribute="width" id="0er-ri-xTX"/>
                             <constraint firstItem="Dhp-vD-icc" firstAttribute="height" secondItem="mFH-b1-Ram" secondAttribute="height" id="1EN-MF-q6N"/>
                             <constraint firstItem="G0I-i0-jgK" firstAttribute="width" secondItem="mFH-b1-Ram" secondAttribute="width" id="1Fx-DM-GeP"/>
@@ -413,9 +413,9 @@
                             <constraint firstItem="aq7-hd-IHd" firstAttribute="width" secondItem="mFH-b1-Ram" secondAttribute="width" id="LhV-1D-8V5"/>
                             <constraint firstItem="FVT-fe-Me0" firstAttribute="top" secondItem="mFH-b1-Ram" secondAttribute="top" id="Mcq-Qg-jqm"/>
                             <constraint firstItem="TKq-L9-BPe" firstAttribute="height" secondItem="mFH-b1-Ram" secondAttribute="height" id="N0a-J6-5Y6"/>
-                            <constraint firstItem="OFT-3L-Trw" firstAttribute="top" secondItem="57J-fb-E9p" secondAttribute="bottom" constant="40" id="OB7-fd-7Uo"/>
+                            <constraint firstItem="OFT-3L-Trw" firstAttribute="top" secondItem="57J-fb-E9p" secondAttribute="bottom" constant="30" id="OB7-fd-7Uo"/>
                             <constraint firstItem="q2K-Da-pdl" firstAttribute="top" secondItem="QcY-5f-saO" secondAttribute="top" id="PJE-0a-xo6"/>
-                            <constraint firstItem="aaV-VC-De6" firstAttribute="top" secondItem="CKw-99-15S" secondAttribute="bottom" constant="40" id="Pci-mv-DGo"/>
+                            <constraint firstItem="aaV-VC-De6" firstAttribute="top" secondItem="CKw-99-15S" secondAttribute="bottom" constant="30" id="Pci-mv-DGo"/>
                             <constraint firstItem="vP7-03-fIm" firstAttribute="trailing" secondItem="q2K-Da-pdl" secondAttribute="trailing" id="QGi-S6-t6F"/>
                             <constraint firstItem="vP7-03-fIm" firstAttribute="width" secondItem="mFH-b1-Ram" secondAttribute="width" id="QcS-fX-ZpI"/>
                             <constraint firstItem="IMB-58-VwX" firstAttribute="leading" secondItem="dmt-6e-5Bc" secondAttribute="trailing" constant="40" id="Qem-Pu-8Ju"/>
@@ -458,7 +458,7 @@
                             <constraint firstItem="on6-ie-PV4" firstAttribute="centerY" secondItem="G60-Aw-dFh" secondAttribute="centerY" id="hhj-gb-HCN"/>
                             <constraint firstItem="CKw-99-15S" firstAttribute="leading" secondItem="Ohv-Dg-7HL" secondAttribute="leading" id="hkH-jG-q2E"/>
                             <constraint firstItem="lQ8-9w-thP" firstAttribute="width" secondItem="mFH-b1-Ram" secondAttribute="width" id="i4R-kt-Ld7"/>
-                            <constraint firstItem="mFH-b1-Ram" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="i71-xk-h4P"/>
+                            <constraint firstItem="mFH-b1-Ram" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="i71-xk-h4P"/>
                             <constraint firstItem="TKq-L9-BPe" firstAttribute="top" secondItem="Mxw-tj-XBb" secondAttribute="top" id="i7R-lI-Hgb"/>
                             <constraint firstItem="iXq-N7-Rey" firstAttribute="trailing" secondItem="vP7-03-fIm" secondAttribute="trailing" id="ikq-Mb-uJ4"/>
                             <constraint firstItem="wY4-OA-IAe" firstAttribute="leading" secondItem="FVT-fe-Me0" secondAttribute="leading" id="kH4-Ge-dVT"/>
@@ -490,10 +490,10 @@
                             <constraint firstItem="dmt-6e-5Bc" firstAttribute="leading" secondItem="FVT-fe-Me0" secondAttribute="trailing" constant="40" id="vQm-xs-Abk"/>
                             <constraint firstItem="IOu-1z-ga6" firstAttribute="height" secondItem="mFH-b1-Ram" secondAttribute="height" id="vdH-4V-QD0"/>
                             <constraint firstItem="Ohv-Dg-7HL" firstAttribute="leading" secondItem="OFT-3L-Trw" secondAttribute="leading" id="vdh-ks-fNA"/>
-                            <constraint firstItem="57J-fb-E9p" firstAttribute="top" secondItem="mFH-b1-Ram" secondAttribute="bottom" constant="40" id="wRh-2G-RRa"/>
+                            <constraint firstItem="57J-fb-E9p" firstAttribute="top" secondItem="mFH-b1-Ram" secondAttribute="bottom" constant="30" id="wRh-2G-RRa"/>
                             <constraint firstItem="vP7-03-fIm" firstAttribute="height" secondItem="mFH-b1-Ram" secondAttribute="height" id="yJJ-Wu-g48"/>
                             <constraint firstItem="A47-jf-nck" firstAttribute="top" secondItem="PQb-hk-tm6" secondAttribute="top" id="yV4-3V-TJ4"/>
-                            <constraint firstItem="Ohv-Dg-7HL" firstAttribute="top" secondItem="OFT-3L-Trw" secondAttribute="bottom" constant="40" id="yWQ-iZ-B5x"/>
+                            <constraint firstItem="Ohv-Dg-7HL" firstAttribute="top" secondItem="OFT-3L-Trw" secondAttribute="bottom" constant="30" id="yWQ-iZ-B5x"/>
                             <constraint firstItem="dYy-zj-J0a" firstAttribute="width" secondItem="mFH-b1-Ram" secondAttribute="width" id="yeu-8c-0f7"/>
                             <constraint firstItem="57J-fb-E9p" firstAttribute="width" secondItem="mFH-b1-Ram" secondAttribute="width" id="zDa-Ts-R6C"/>
                             <constraint firstItem="A47-jf-nck" firstAttribute="width" secondItem="mFH-b1-Ram" secondAttribute="width" id="zRP-Ej-uX6"/>
@@ -562,7 +562,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -576,6 +576,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ovX-h6-14z"/>
+                    <connections>
+                        <outlet property="historyTextView" destination="CQ5-Jn-LKr" id="ulL-SN-HGn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZO-im-dSH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
