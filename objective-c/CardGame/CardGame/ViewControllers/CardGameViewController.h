@@ -17,6 +17,8 @@
 // protected - for subclasses
 - (Deck *)createDeck; // abstract
 - (CardMatchType)getMatchType; // abstract
+- (NSAttributedString *)cardsTitles:(NSArray *)cards; // abstract
+- (NSAttributedString *)titleForCard: (Card *)card; // abstract
 
 @end
 

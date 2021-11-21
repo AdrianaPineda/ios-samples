@@ -21,6 +21,7 @@
 @property (nonatomic) int flipCount;
 @property (strong, nonatomic) Deck *deck;
 @property (strong, nonatomic) CardMatchingGame *game;
+@property (strong, nonatomic) NSMutableArray *history;
 
 - (IBAction)reDealClicked;
 - (IBAction)matchTypeChanged;
@@ -30,7 +31,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self updateUI];
     // Do any additional setup after loading the view.
+}
+
+- (NSMutableArray *)history {
+    if (!_history) {
+        _history = [[NSMutableArray alloc] init];
+    }
+
+    return _history;
 }
 
 - (Deck *)deck {
@@ -96,7 +106,7 @@
     for (UIButton *cardButton in self.cardButtons) {
         NSUInteger cardIndex = [self.cardButtons indexOfObject:cardButton];
         Card *card = [self.game cardAtIndex:cardIndex];
-        [cardButton setTitle:[self titleForCard:card] forState:UIControlStateNormal];
+        [cardButton setAttributedTitle:[self titleForCard:card] forState:UIControlStateNormal];
         [cardButton setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
         cardButton.enabled = !card.isMatched;
     }
@@ -106,6 +116,15 @@
     [self configureResultsText];
 }
 
+- (NSAttributedString *)cardsTitles:(NSArray *)cards {
+    NSMutableAttributedString *cardsText = [[NSMutableAttributedString alloc] init];
+    for (Card *card in cards) {
+        [cardsText appendAttributedString: [[NSAttributedString alloc] initWithString: card.contents]];
+    }
+
+    return cardsText;
+}
+
 - (void)configureResultsText {
     Results *results = [self.game results];
     if (!results) {
@@ -113,29 +132,34 @@
         return;
     }
 
-    NSMutableString *cardsText = [[NSMutableString alloc] init];
-    for (Card *card in results.currentCards) {
-        [cardsText appendString: card.contents];
-    }
-
-    NSString *resultsText = @"";
+    NSAttributedString *cardsText = [self cardsTitles:results.currentCards];
+    NSMutableAttributedString *resultsText = [[NSMutableAttributedString alloc] init];
     if (!results.allCardsChosen) {
-        resultsText = cardsText;
+        [resultsText appendAttributedString:cardsText];
     } else if (results.currentScore > 0) {
-        resultsText = [NSString stringWithFormat:@"Matched %@ for %ld points", cardsText, (long)results.currentScore];
+        NSAttributedString *firstMessage = [[NSAttributedString alloc] initWithString: @"Matched "];
+        NSAttributedString *secondMessage = [[NSAttributedString alloc] initWithString: [NSString stringWithFormat:@" for %ld points", (long)results.currentScore]];
+
+        [resultsText appendAttributedString:firstMessage];
+        [resultsText appendAttributedString:cardsText];
+        [resultsText appendAttributedString:secondMessage];
+
     } else {
-        resultsText = [NSString stringWithFormat:@"%@ don't match! %ld points penalty", cardsText, (long)results.currentScore];
+        NSAttributedString *message = [[NSAttributedString alloc] initWithString: [NSString stringWithFormat:@" don't match! %ld points penalty", (long)results.currentScore]];
+        [resultsText appendAttributedString:cardsText];
+        [resultsText appendAttributedString:message];
     }
 
-    [self.resultsLabel setText:resultsText];
+    [self.resultsLabel setAttributedText:resultsText];
+    [self.history addObject:resultsText];
 }
 
-- (NSString *)titleForCard: (Card *)card {
-    return card.isChosen ? card.contents : @"";
+- (NSAttributedString *)titleForCard: (Card *)card {
+    return nil;
 }
 
 - (UIImage *)backgroundImageForCard: (Card *)card {
-    return [UIImage imageNamed:card.isChosen ? @"CardFront" : @"CardBack"];
+    return [UIImage imageNamed:card.isChosen || !self.hideCards ? @"CardFront" : @"CardBack"];
 }
 
 - (void)handleEmptyDeck {
@@ -145,6 +169,7 @@
 - (IBAction)reDealClicked {
     self.deck = nil;
     self.game = nil;
+    self.history = nil;
     [self updateUI];
 }
 

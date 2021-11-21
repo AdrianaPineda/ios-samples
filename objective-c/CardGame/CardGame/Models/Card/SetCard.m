@@ -10,7 +10,7 @@
 @implementation SetCard
 
 + (NSArray *)validColors {
-    return @[@"🖍", @"🧪", @"🖌"];
+    return @[@"red", @"green", @"blue"];
 }
 
 + (NSArray *)validShadings {
@@ -18,7 +18,7 @@
 }
 
 + (NSArray *)validShapes {
-    return @[@"🟤", @"🟫", @"🤎"];
+    return @[@"▲", @"■", @"●"];
 }
 
 + (NSUInteger)maxCount {
