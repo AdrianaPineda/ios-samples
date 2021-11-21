@@ -7,6 +7,7 @@
 
 #import "CardGameViewController.h"
 #import "CardMatchingGame.h"
+#import "HistoryViewController.h"
 
 @interface CardGameViewController ()
 
@@ -180,6 +181,19 @@
 
 - (CardMatchType)getMatchType {
     return 0;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if (![segue.identifier isEqualToString:@"history"]) {
+        return;
+    }
+
+    if (![segue.destinationViewController isKindOfClass:[HistoryViewController class]]) {
+        return;
+    }
+
+    HistoryViewController *historyVC = (HistoryViewController *)segue.destinationViewController;
+    historyVC.historyContents = self.history;
 }
 
 

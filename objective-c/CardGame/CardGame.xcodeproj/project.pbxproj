@@ -26,6 +26,7 @@
 		0160556B2745E85100410193 /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160556A2745E85100410193 /* SetCard.m */; };
 		016055702745EC1C00410193 /* SetDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160556F2745EC1C00410193 /* SetDeck.m */; };
 		016A6B232741ACC10070A0B3 /* Results.m in Sources */ = {isa = PBXBuildFile; fileRef = 016A6B222741ACC10070A0B3 /* Results.m */; };
+		01E7EB992749D5E40005B83C /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E7EB982749D5E40005B83C /* HistoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		0160556F2745EC1C00410193 /* SetDeck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetDeck.m; sourceTree = "<group>"; };
 		016A6B212741ACC10070A0B3 /* Results.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Results.h; sourceTree = "<group>"; };
 		016A6B222741ACC10070A0B3 /* Results.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Results.m; sourceTree = "<group>"; };
+		01E7EB972749D5E40005B83C /* HistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		01E7EB982749D5E40005B83C /* HistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +197,8 @@
 				015D0D5A27449859002D393F /* PlayingCardViewController.m */,
 				016055662745E81000410193 /* SetCardViewController.h */,
 				016055672745E81000410193 /* SetCardViewController.m */,
+				01E7EB972749D5E40005B83C /* HistoryViewController.h */,
+				01E7EB982749D5E40005B83C /* HistoryViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				01527AD52711EEC00029E354 /* PlayingCard.m in Sources */,
 				01349D02270FEB340041E941 /* AppDelegate.m in Sources */,
 				0160556B2745E85100410193 /* SetCard.m in Sources */,
+				01E7EB992749D5E40005B83C /* HistoryViewController.m in Sources */,
 				016055682745E81000410193 /* SetCardViewController.m in Sources */,
 				01349D13270FEB360041E941 /* main.m in Sources */,
 				015D0D5B27449859002D393F /* PlayingCardViewController.m in Sources */,
