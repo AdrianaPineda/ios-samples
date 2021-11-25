@@ -248,6 +248,203 @@ if (r.location == NSNotFound) { /* couldn't find `hi` inside `greeting`*/}
 
 # UIKit
 
+## UIView
+Represents a rectangular area, defines a coordinate space
+
+Draws and handles events in that rectangl
+
+Hierarchical:
+- Only has one superview
+- Can have zero or more subcviews
+  - Subview order matters. Those latter in the array are on top of those earlier
+- Can clip its subviews to its bounds or not (if so, it prevents the subviews from being drawn outside of the view)
+
+```objc
+- (void)addSubview:(UIView *)aView; 
+- (void)removeFromSuperview;
+```
+
+Each view controller has a property called `view` -> it is the top level view that contains all the views in the view hierarchy for the MVC
+
+If we want to override the UIView's designated initializer, we should do it in `awakeFromNib` because `initWithFrame:` is **NOT** called for a UIView coming out of a storyboard, `awakeFromNib` is.
+
+Typical code:
+```objc
+- (void)setup { ... }
+- (void)awakeFromNib { [self setup]; }
+- (id)initWithFrame: (CGRect)rect {
+  self = [super initWithFrame:rect];
+  [self setup];
+  return self;
+}
+```
+
+### UIWindow
+View at the top of the view hierarchy
+
+Only one UIWindow in an iOS app
+
+### View coordinates
+
+- CGFloat: floating point number used for graphics
+- CGPoint: C struct with 2 CGFloats in it (x and y)
+- CGSize: C struct with 2 CGFloats in it (width and height)
+
+Origin of a view's coordinate system is upper left!
+
+```
+(0,0) -> 
+  |
+  v
+```
+
+Units are "points"
+
+How many pixels per point? `contentScaleFactor` property from view
+
+Properties related to location and size:
+- `CGRect bounds;` View's internal drawing space's origin and size. Used inside the view's own implementation
+- `CGPoint center;` Center of your view in your `superview`'s coordinate space
+- `CGRect frame;` Rectangle in your `superview`'s coordinate space which contains the view's `bounds.size`
+
+My view's `bounds.size` is **not** always equal to `frame.size` because the view can be rotated. If its in a diamond shape, the frame might be bigger
+
+![coordinates](./coordinates.png)
+
+### How to create a view?
+Use `alloc` and `initWithFrame:` or use `init` (frame will be CGRectZero)
+
+### How to draw?
+Create a UIView subclass and override method `- (void)drawRect:(CGRect)rect;`. We can use Core Graphics framework directly (C API) or use UIBezierPath class
+
+**NEVER** call `drawRect`. But you can let iOS know that the view's visual is out of date with:
+- `- (void)setNeedsDisplay;`
+- `- (void)setNeedsDisplayInRect:(CGRect)rect;`
+
+These ^ will end up calling `drawRect:` at an appropriate time
+
+
+## Core graphics
+Core graphics workis in a 4-step process:
+1. Get a context to draw into
+1. Create paths (triangles, squares, rounded rects, etc)
+1. Set colors, fonts, textures, linewidths, linecaps, etc
+1. Stroke or fill the paths
+
+### Context
+Context determines where the drawing goes (screen, offscreen bitmap, pdf, printer)
+
+For normal drawing, UIKit sets up the current context (but only valid during the call to `drawRect`). A new context is set up each time `drawRect` is called so don't cache it
+
+UIBezierPath draws into the current context. For Core Graphis C functions, call `CGContextRef context = UIGraphicsGetCurrentContext();`
+
+### Create Path
+Let's create a triangle
+
+```objc
+UIBezierPath *path = [[UIBezierPath alloc] init];
+[path moveToPoint: CGPointMake(75,10)];
+[path addLineToPoint: CGPointMake(160, 150)];
+[path addLineToPoint: CGPointMake(10, 150)];
+[path closePath]; // connects last point back to the first
+
+// At this point nothing has been drawn yet, so we need to fill
+// and stroke the path as follows:
+
+[[UIColor greenColor] setFill];
+[[UIColor redColor] setStroke];
+[path fill];
+[path stroke];
+```
+
+To "clip" my drawing to be inside a rect (i.e roundedRect) we have to call: `[roundedRect addClip];`
+
+To set a view to be transparent we have to:
+a) either set the `opaque` property to `NO` & `backgroundColor` to `nil`
+b) OR set the `alpha` property
+
+⚠️ Transparency is not cheap (performance-wise)
+
+### Graphics State
+If we want to have a utility method that draws something, we need to make sure we save and restore the state:
+
+```objc
+- (void)drawGreenCircle:(CGContextRef)ctxt {
+  CGContextSaveGState(ctxt);
+  [[UIColor greenColor] setFill];
+  // draw circle
+  CGContextRestoreGState(ctxt);
+}
+
+- (void)drawRect:(CGRect)rect {
+  CGContextRef context = UIGraphicsGetCurrentContext();
+  [[UIColor redColor] setFill];
+  // do stuff
+  [self drawGreenCircle:context];
+  // do more stuff and expect fill color to be red
+}
+```
+
+### Drawing text
+a) We can use a `UILabel` as a subview to draw text in our view
+
+b) But we can draw in `drawRect:`
+    
+    ```objc
+    NSAttributedString *text = ...;
+    [text drawAtPoint:(CGPoint)p]; // drawAtPoint is added by UIKit via a Category
+    ```
+
+### Drawing images
+a) We can use a `UIImageView`
+
+b) But we can also draw with CGContext
+
+    ```objc
+    UIGraphicsBeginImageContext(CGSize);
+    // draw with CGContext funcionts
+    UIImage *myImage = UIGraphicsGetImageFromCurrentContext();
+    // several options to draw
+    [myImage drawAtPoint:(CGPoint)p]; // p is the upper left corner of the image
+    [myImage drawInRect:(CGRect)r]; // scales the image to fit in r
+    [myImage drawAsPatternInRect:(CGRect)patRect]; // tiles the image into patRect
+    
+    UIGraphicsEndImageContext();
+    ```
+
+### What if my bounds change?
+There is no redraw, but the bits will get stretched. But if that's not what we want then there is a property called `contentMode` and tells what happens when the bounds change
+
+```objc
+UIViewContentMode{Left,Right,Top,Right,BottomLeft,BottomRight,TopLeft,TopRight} // moves the bits of your drawing to that location
+UIViewContentModeScale{ToFill,AspectFill,AspectFit} // stretches the bits of your drawing
+UIViewContentModeRedraw // calls `drawRect:` to redraw everything when the bounds change
+
+// Default is UIViewContentModeScaleToFill
+```
+
+## UIGestureRecognizer
+Get notified of raw touch events (touch down, moved, up).
+
+We need to
+1. Add gesture recognizer to a view
+1. Provide a method to call (handler) when the gesture happens
+
+```objc
+UIPanGestureRecognizer *pangr = [[UIPanGestureRecognizer alloc] initWithTarget:view action:@selector(pan:)];
+[view addGestureRecognizer:pangr];
+```
+
+Each concrete class of a gesture recognizer provides methods to implement the target of that gesture
+
+UIGestureRecognizer has a `state` and has the following possible values depending on the gesture:
+- possible
+- recognized (for discrete gestures)
+- began (for continuous gestures)
+- changed
+- ended
+- cancelled
+
 ## UIColor
 An object representing a color
 
