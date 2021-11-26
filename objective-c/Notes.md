@@ -759,3 +759,33 @@ c. Add UIDynamicItems (usually UIViews) to the UIDynamicBehaviors. Animating wil
 // all views need to be in a view hierarchy, *view* is the view at the top where animations will happen
 UIDynamicAnimator *animator = [[UIDynamicAnimator alloc] initWithReferenceView:view];
 ```
+
+# Autolayout
+Setting UIView frames using rules rather than numbers
+
+# Multithreading
+Multithreading is mostly about 'queues' in iOS. 
+
+- Main queue: all UI activity happens in this queue. Time consuiming must **no** occur here
+- Other queues
+
+# UIScrollView
+Useful properties:
+- contentSize: we need to set this ⚠️
+- contentOffset
+- bounds
+
+## Zooming
+All UIView's have a property (transform) which is an affine transform (translate, scale, rotate)
+
+Scroll view simply modifies this transform when you zoom.
+
+Zooming affects the scroll view's contentSize and contentOffset
+
+Properties:
+- minimumZoomScale
+- maximumZoomSacle
+
+Will not work withhout delegate method `- (UIView *)viewForZoomInScrollView:(UIScrollView *)sender;`
+
+We can also zoom to a specific rect
