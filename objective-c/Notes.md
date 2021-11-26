@@ -654,3 +654,108 @@ When the segue is being prepared `prepareForSegue:sender:`, the outlets are not 
 We can prevent a segue from happening: `shouldPerformSegueWithIdentifier:sender`
 
 Navigation controller inside a tabbar controller is ok. What's not so common is a tabbar controller inside a navbar controller
+
+# Protocols
+Syntactical modification of `id`, for example `id <MyProtocol> obj`
+
+Declare it with `@protocol`
+
+Make optional methods/props with `@optional` and required with `@required`
+
+Protocols can also conform to other protocols `@protocol Foo <AnotherProtocol1, AnotherProtocol2>`
+
+A useful protocol to conform to is `NSObject` because has things like `class`, `isEqual:`, `isKindOfClass:`, `description`, `performSelector:`, etc
+
+Where do @protocol declarations go? In header files, or in its own dedicated header file
+
+Where do I conform to a protocol? In the `@interface` declarations => `@interface MyClass: NSObject <Foo>` (public) or `@interface MyClass() <Foo>` (private), but **not both**
+
+This is a tool the compiler helps you, but it makes no difference at runtime
+
+Uses:
+- delegates and dataSources
+- dataSources and views
+- declaring what things are animatable
+
+# Blocks
+Block of code
+
+Start with caret ^, then (optional) return type, then (optional) arguments in parenthesis, then `{  <code> }`
+
+We can use local variables declared *outside* of the block, but they are readonly unless we use `_block`
+
+```objc
+_block BOOL stoppedEarly = NO;
+
+// block: 
+{
+    stoppedEarly = YES;
+
+    // for pointers, the block will automatically have a strong pointer to it until the block goes out of scope
+}
+```
+
+Blocks sort of act like objects:
+- Can be stored inside other objects (properties, arrays, dictionaries)
+- Their only "method" is `copy`
+
+## Memory cycles
+Happens if a block strongly references self and self holds the block strongly.
+
+To fix it: we can use `__weak` => `__weak MyClass *weakSelf = self;`
+
+**Rules**:
+
+If there are no arguments:
+```objc
+[UIView animateWithDuration:5.0 animations: ^() { 
+  // ....
+}]
+
+==>
+[UIView animateWithDuration:5.0 animations: ^{ 
+  // ....
+}]
+```
+
+If the return value can be inferred:
+```objc
+[mySet objectsPassingTest: ^BOOL(id obj, ..) { 
+  return YES;
+}]
+
+==>
+[mySet objectsPassingTest: ^(id obj, ..) { 
+  return YES;
+}]
+```
+
+# Animations
+There are 3 ways to animate views:
+1. Certain UIView properties can be animated over time: frame, transform (translation, rotation and scale) and alpha (opacity)
+  ```objc
+  // changes made in the method happens immediately
+  [UIView animateWithDuration:delay:options:animations:completion:]
+  ```
+
+2. Modify an entire view at once, for example flip view (that does not involve the properties from option # 1)
+  ```objc
+  [UIView transitionWithView:duration:options:animations:completion:]
+  ```
+
+3. Change the view hierarchy
+  ```objc
+  [UIView transitionFromView:toView:duration:options:completion:]
+  ```
+
+# Dynamic animation
+Set up physics relating animatable objects and let them run until they resolve to stasis
+
+a. Create UIDynamicAnimator
+b. Add UIDynamicBehaviors to it (gravity, collisions, etc)
+c. Add UIDynamicItems (usually UIViews) to the UIDynamicBehaviors. Animating will start immediately
+
+```objc
+// all views need to be in a view hierarchy, *view* is the view at the top where animations will happen
+UIDynamicAnimator *animator = [[UIDynamicAnimator alloc] initWithReferenceView:view];
+```
