@@ -1,4 +1,7 @@
 https://itunes.apple.com/us/course/developing-ios-7-apps-for-iphone-and-ipad/id733644550
+
+https://web.stanford.edu/class/cs193p/cgi-bin/drupal/downloads-2013-fall
+
 # Creating objects
 
 We use alloc and init, but we also use class methods. Sometimes both a class creator method and init method exist
@@ -655,6 +658,8 @@ We can prevent a segue from happening: `shouldPerformSegueWithIdentifier:sender`
 
 Navigation controller inside a tabbar controller is ok. What's not so common is a tabbar controller inside a navbar controller
 
+Segues are always new instances, there is no reuse
+
 # Protocols
 Syntactical modification of `id`, for example `id <MyProtocol> obj`
 
@@ -789,3 +794,13 @@ Properties:
 Will not work withhout delegate method `- (UIView *)viewForZoomInScrollView:(UIScrollView *)sender;`
 
 We can also zoom to a specific rect
+
+# UISplitViewController
+Requires delegate to be set (most likely in `awakeFromNib`, no it `viewDidLoad`), because the split view controller starts sending its delegate methods way before `viewDidLoad`.
+
+But then, when the delegate methods get sent, my outlets arent set yet
+
+# UIPopoverController
+Its not a UIViewController. Instead it has a @property that holds the UIViewController that is inside it (`contentViewController`)
+
+Popover is dismissed when user touches outside of it. Unless the user touches in one of the views in this array property in UIPopoverController `passthroughViews` (i.e. when using tabbar)
