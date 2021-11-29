@@ -804,3 +804,19 @@ But then, when the delegate methods get sent, my outlets arent set yet
 Its not a UIViewController. Instead it has a @property that holds the UIViewController that is inside it (`contentViewController`)
 
 Popover is dismissed when user touches outside of it. Unless the user touches in one of the views in this array property in UIPopoverController `passthroughViews` (i.e. when using tabbar)
+
+# CoreData
+Object oriented database
+
+NSManagedObject is the super class for all objects in the db
+
+NSManagedContext: to access core data from the code
+
+UIManagedDocument: inherits from UIDocument which provides a lot of mechanism for the management of storage. A container for the Core Data db. UIManagedDocuments autosave themselves, 
+
+# UIApplication
+Shared instance of UIApplication object in the application
+
+It has a network activity indicator `networkActivityIndicatorVisible` (spinner on status bar). It can be somewhat difficult to use this property correctly because its global and its a boolean; if i have multiple thread using the netwrok I need to make sure Im setting this property properly
+
+Background fetches: check if we need to set out minimum background fetch interval. `setMinimumBackgroundFetchInterval`
