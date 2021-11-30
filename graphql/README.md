@@ -4,6 +4,8 @@ This repository contains a sample app using GraphQL. It displays a list of Starw
 
 This sample was developed based on the [tutorial from Raywenderlich](https://www.raywenderlich.com/10886648-graphql-using-the-apollo-framework-getting-started)
 
+![app gif](./app-gif.gif)
+
 ## How to run
 1. Go to the folder `SWAPI GraphQL` and start the server:
 ```bash
