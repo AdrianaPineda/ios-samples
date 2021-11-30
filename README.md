@@ -6,3 +6,4 @@ This repository contains samples of different APIs:
 -   [Skeleton view](./skeleton-view)
 -   [Core Data](./core-data)
 -   [RxSwift](./rxswift)
+-   [GraphQl](./graphql)
