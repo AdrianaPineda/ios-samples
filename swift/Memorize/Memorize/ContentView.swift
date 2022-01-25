@@ -30,17 +30,26 @@ struct ContentView: View {
 }
 
 struct CardView: View {
+    // `@State` changes var, its now a pointer to a boolean
+    // used for temp state or for state that only affects the way the view is displayed
+    @State var isFaceUp = false
+
     var body: some View {
         ZStack { // stacks views on top of each other, from the device towards the user
-            RoundedRectangle(cornerRadius: 20)
-                .fill()
-                .foregroundColor(.white)
-            RoundedRectangle(cornerRadius: 20)
-                .stroke(lineWidth:3)
-            Text("✈️")
-                .font(.largeTitle)
-                .lineLimit(nil)
-                .padding() // default padding, it might mean different things for different devices (watch, phone, ipad)
+            let shape = RoundedRectangle(cornerRadius: 20)
+            if isFaceUp {
+                shape.fill().foregroundColor(.white)
+                shape.stroke(lineWidth:3)
+                Text("✈️")
+                    .font(.largeTitle)
+                    .lineLimit(nil)
+                    .padding() // default padding, it might mean different things for different devices (watch, phone, ipad)
+            } else {
+                shape.fill()
+            }
+        }
+        .onTapGesture {
+            isFaceUp = !isFaceUp
         }
     }
 }
