@@ -14,14 +14,16 @@ import SwiftUI
 
 
 struct ContentView: View {
+    var emojis = ["✈️", "🚕", "🚃", "🛵"]
+
     // 'some View' something that behaves like a View
     var body: some View {
 
         HStack {
-            CardView()
-            CardView()
-            CardView()
-            CardView()
+            // we cannot do for loops here, but we can:
+            ForEach(emojis, id: \.self) { emoji in
+                CardView(content: emoji)
+            }
         }
         .padding(.horizontal)
         .foregroundColor(/*@START_MENU_TOKEN@*/.red/*@END_MENU_TOKEN@*/)
@@ -32,7 +34,8 @@ struct ContentView: View {
 struct CardView: View {
     // `@State` changes var, its now a pointer to a boolean
     // used for temp state or for state that only affects the way the view is displayed
-    @State var isFaceUp = false
+    @State var isFaceUp = true
+    var content: String
 
     var body: some View {
         ZStack { // stacks views on top of each other, from the device towards the user
@@ -40,7 +43,7 @@ struct CardView: View {
             if isFaceUp {
                 shape.fill().foregroundColor(.white)
                 shape.stroke(lineWidth:3)
-                Text("✈️")
+                Text(content)
                     .font(.largeTitle)
                     .lineLimit(nil)
                     .padding() // default padding, it might mean different things for different devices (watch, phone, ipad)
