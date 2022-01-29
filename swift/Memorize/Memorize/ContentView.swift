@@ -14,20 +14,60 @@ import SwiftUI
 
 
 struct ContentView: View {
-    var emojis = ["✈️", "🚕", "🚃", "🛵"]
+    var emojis = ["🚕", "🚃", "🛵", "🚂", "🚄", "🚅", "🚆", "🚇", "🚈", "🚉", "🚊", "🚝", "🚞", "🚋", "🚌", "🚍", "🚎", "🚐", "🚑", "🚒", "🚓", "🚔", "🚕", "🚖", "🚗", "🚘", "🚙", "🛻", "🚚", "🚛", "🚜", "🏎️", "🏍️", "🛵", "🦽", "🦼", "🛺", "🚲"]
+    @State var emojiCount = 4
 
     // 'some View' something that behaves like a View
     var body: some View {
-
-        HStack {
-            // we cannot do for loops here, but we can:
-            ForEach(emojis, id: \.self) { emoji in
-                CardView(content: emoji)
+        VStack {
+            ScrollView {
+                // LazyVGrid: lazy about accessing the body vars of all its views
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
+                    // we cannot do for loops here, but we can:
+                    ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
+                        CardView(content: emoji)
+                            .aspectRatio(2/3, contentMode: .fit)
+                    }
+                }
             }
+            .foregroundColor(.red)
+            Spacer()
+            HStack {
+                removeCard
+                Spacer()
+                addCard
+            }
+            .font(.largeTitle)
+            .padding(.horizontal)
         }
         .padding(.horizontal)
-        .foregroundColor(/*@START_MENU_TOKEN@*/.red/*@END_MENU_TOKEN@*/)
 
+    }
+
+    var removeCard: some View {
+        Button {
+            if emojiCount < emojis.count {
+                emojiCount -= 1
+            }
+        } label: {
+            Image(systemName: "minus.circle")
+//            VStack {
+//                Text("Remove")
+//                Text("Card")
+//            }
+        }
+    }
+
+    var addCard: some View {
+        Button {
+            emojiCount += 1
+        } label: {
+            Image(systemName: "plus.circle")
+//            VStack {
+//                Text("Add")
+//                Text("Card")
+//            }
+        }
     }
 }
 
@@ -42,7 +82,7 @@ struct CardView: View {
             let shape = RoundedRectangle(cornerRadius: 20)
             if isFaceUp {
                 shape.fill().foregroundColor(.white)
-                shape.stroke(lineWidth:3)
+                shape.strokeBorder(lineWidth:3)
                 Text(content)
                     .font(.largeTitle)
                     .lineLimit(nil)
