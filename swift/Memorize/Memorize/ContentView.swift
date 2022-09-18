@@ -17,8 +17,12 @@ struct ContentView: View {
     var emojis = ["🚕", "🚃", "🛵", "🚂", "🚄", "🚅", "🚆", "🚇", "🚈", "🚉", "🚊", "🚝", "🚞", "🚋", "🚌", "🚍", "🚎", "🚐", "🚑", "🚒", "🚓", "🚔", "🚕", "🚖", "🚗", "🚘", "🚙", "🛻", "🚚", "🚛", "🚜", "🏎️", "🏍️", "🛵", "🦽", "🦼", "🛺", "🚲"]
     @State var emojiCount = 4
 
-    // 'some View' something that behaves like a View
+    // 'some View': something that behaves like a View
     var body: some View {
+//        RoundedRectangle(cornerRadius: 25)
+//            .stroke(lineWidth: 3)
+//            .padding(.horizontal)
+//            .foregroundColor(.red)
         VStack {
             ScrollView {
                 // LazyVGrid: lazy about accessing the body vars of all its views
