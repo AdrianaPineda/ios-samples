@@ -75,9 +75,11 @@ struct ContentView: View {
     }
 }
 
+// Views are immutable
 struct CardView: View {
     // `@State` changes var, its now a pointer to a boolean
     // used for temp state or for state that only affects the way the view is displayed
+    // without it, we couldn't modify the var
     @State var isFaceUp = true
     var content: String
 
