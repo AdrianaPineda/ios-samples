@@ -12,9 +12,8 @@
 
 import SwiftUI
 
-
 struct ContentView: View {
-    var emojis = ["🚕", "🚃", "🛵", "🚂", "🚄", "🚅", "🚆", "🚇", "🚈", "🚉", "🚊", "🚝", "🚞", "🚋", "🚌", "🚍", "🚎", "🚐", "🚑", "🚒", "🚓", "🚔", "🚕", "🚖", "🚗", "🚘", "🚙", "🛻", "🚚", "🚛", "🚜", "🏎️", "🏍️", "🛵", "🦽", "🦼", "🛺", "🚲"]
+    var emojis = ["🚕", "🚃", "🛵", "🚂", "🚄", "🚅", "🚆", "🚇", "🚈", "🚉", "🚊", "🚝", "🚞", "🚋", "🚌", "🚍", "🚎", "🚐", "🚑", "🚒", "🚓", "🚔", "🚖", "🚗", "🚘", "🚙", "🛻", "🚚", "🚛", "🚜", "🏎️", "🏍️", "🦽", "🦼", "🛺", "🚲"]
     @State var emojiCount = 4
 
     // 'some View': something that behaves like a View
@@ -24,8 +23,11 @@ struct ContentView: View {
 //            .padding(.horizontal)
 //            .foregroundColor(.red)
         VStack {
+            Text("Memorize!").font(.largeTitle)
             ScrollView {
                 // LazyVGrid: lazy about accessing the body vars of all its views
+                // We only get the value of a body var of views that actually appear on screen
+                // Only accesing body var when its absolutely necessary
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
                     // we cannot do for loops here, but we can:
                     ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
@@ -33,13 +35,21 @@ struct ContentView: View {
                             .aspectRatio(2/3, contentMode: .fit)
                     }
                 }
+
             }
             .foregroundColor(.red)
             Spacer()
             HStack {
-                removeCard
+                carsTheme
                 Spacer()
-                addCard
+                foodTheme
+                Spacer()
+                animalsTheme
+                Spacer()
+                flagsTheme
+//                removeCard
+//                Spacer()
+//                addCard
             }
             .font(.largeTitle)
             .padding(.horizontal)
@@ -50,7 +60,7 @@ struct ContentView: View {
 
     var removeCard: some View {
         Button {
-            if emojiCount < emojis.count {
+            if emojiCount > 1 {
                 emojiCount -= 1
             }
         } label: {
@@ -64,13 +74,47 @@ struct ContentView: View {
 
     var addCard: some View {
         Button {
-            emojiCount += 1
+            if emojiCount < emojis.count {
+                emojiCount += 1
+            }
         } label: {
             Image(systemName: "plus.circle")
 //            VStack {
 //                Text("Add")
 //                Text("Card")
 //            }
+        }
+    }
+
+    var carsTheme: some View {
+        Button {
+
+        } label: {
+            Image(systemName: "car")
+        }
+    }
+
+    var foodTheme: some View {
+        Button {
+
+        } label: {
+            Image(systemName: "applelogo")
+        }
+    }
+
+    var animalsTheme: some View {
+        Button {
+
+        } label: {
+            Image(systemName: "ant")
+        }
+    }
+
+    var flagsTheme: some View {
+        Button {
+
+        } label: {
+            Image(systemName: "flag.2.crossed")
         }
     }
 }
@@ -88,7 +132,7 @@ struct CardView: View {
             let shape = RoundedRectangle(cornerRadius: 20)
             if isFaceUp {
                 shape.fill().foregroundColor(.white)
-                shape.strokeBorder(lineWidth:3)
+                shape.strokeBorder(lineWidth:3) // strokeBorder does it on the inside
                 Text(content)
                     .font(.largeTitle)
                     .lineLimit(nil)
