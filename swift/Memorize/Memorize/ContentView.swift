@@ -13,8 +13,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    var emojis = ["🚕", "🚃", "🛵", "🚂", "🚄", "🚅", "🚆", "🚇", "🚈", "🚉", "🚊", "🚝", "🚞", "🚋", "🚌", "🚍", "🚎", "🚐", "🚑", "🚒", "🚓", "🚔", "🚖", "🚗", "🚘", "🚙", "🛻", "🚚", "🚛", "🚜", "🏎️", "🏍️", "🦽", "🦼", "🛺", "🚲"]
-    @State var emojiCount = 4
+    @State var emojis = ["🙋‍♀️"]
+    @State var maxEmojiCount = 150
 
     // 'some View': something that behaves like a View
     var body: some View {
@@ -28,6 +28,7 @@ struct ContentView: View {
                 // LazyVGrid: lazy about accessing the body vars of all its views
                 // We only get the value of a body var of views that actually appear on screen
                 // Only accesing body var when its absolutely necessary
+                let emojiCount = min(maxEmojiCount, emojis.count)
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
                     // we cannot do for loops here, but we can:
                     ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
@@ -58,63 +59,72 @@ struct ContentView: View {
 
     }
 
-    var removeCard: some View {
-        Button {
-            if emojiCount > 1 {
-                emojiCount -= 1
-            }
-        } label: {
-            Image(systemName: "minus.circle")
-//            VStack {
-//                Text("Remove")
-//                Text("Card")
+//    var removeCard: some View {
+//        Button {
+//            if emojiCount > 1 {
+//                emojiCount -= 1
 //            }
-        }
-    }
+//        } label: {
+//            Image(systemName: "minus.circle")
+////            VStack {
+////                Text("Remove")
+////                Text("Card")
+////            }
+//        }
+//    }
 
-    var addCard: some View {
-        Button {
-            if emojiCount < emojis.count {
-                emojiCount += 1
-            }
-        } label: {
-            Image(systemName: "plus.circle")
-//            VStack {
-//                Text("Add")
-//                Text("Card")
+//    var addCard: some View {
+//        Button {
+//            if emojiCount < emojis.count {
+//                emojiCount += 1
 //            }
-        }
-    }
+//        } label: {
+//            Image(systemName: "plus.circle")
+////            VStack {
+////                Text("Add")
+////                Text("Card")
+////            }
+//        }
+//    }
 
     var carsTheme: some View {
-        Button {
-
-        } label: {
-            Image(systemName: "car")
+        ThemeView(imageName: "car", text: "Cars") {
+            emojis = ["🚕", "🚃", "🛵", "🚂", "🚄", "🚅", "🚆", "🚇", "🚈", "🚉", "🚊", "🚝", "🚞", "🚋", "🚌", "🚍", "🚎", "🚐", "🚑", "🚒", "🚓", "🚔", "🚖", "🚗", "🚘", "🚙", "🛻", "🚚", "🚛", "🚜"].shuffled()
         }
     }
 
     var foodTheme: some View {
-        Button {
-
-        } label: {
-            Image(systemName: "applelogo")
+        ThemeView(imageName: "applelogo", text: "Food") {
+            emojis = ["🍔", "🍇", "🍈", "🍉", "🍊", "🍋", "🍌", "🍍", "🥭", "🍎", "🍏", "🍐", "🍑", "🍒", "🍓", "🫐", "🥝", "🍅", "🫒", "🥥", "🥑", "🥕", "🌽", "🌶️", "🫑", "🥒", "🥬", "🥦", "🧄", "🧅", "🍄", "🥜", "🫘", "🌰", "🍞"].shuffled()
         }
     }
 
     var animalsTheme: some View {
-        Button {
-
-        } label: {
-            Image(systemName: "ant")
+        ThemeView(imageName: "ant", text: "Animals") {
+            emojis = ["🦍", "🦧", "🐶", "🐕", "🦮", "🐕‍🦺", "🐩", "🐺", "🦊", "🦝", "🐱", "🐈", "🐈‍⬛", "🦁", "🐯", "🐅", "🐆", "🐴", "🐎", "🦄", "🦓", "🦌", "🦬", "🐮", "🐂", "🐃", "🐄", "🐷", "🐖", "🐗", "🐏", "🐑", "🐐", "🐪", "🐫", "🐓", "🦉", "🐥", "🦩", "🦃", "🦜", "🦆", "🕊", "🦅", "🦢"].shuffled()
         }
     }
 
     var flagsTheme: some View {
-        Button {
+        ThemeView(imageName: "flag.2.crossed", text: "Flags") {
+            emojis = ["🏳️‍🌈", "🏳️‍⚧️", "🏴‍☠️", "🇦🇨", "🇦🇩", "🇦🇪", "🇦🇫", "🇦🇬", "🇦🇮", "🇦🇱", "🇦🇲", "🇦🇴", "🇦🇶", "🇦🇷", "🇦🇸", "🇦🇹", "🇦🇺", "🇦🇼", "🇦🇽", "🇦🇿", "🇧🇦", "🇧🇧", "🇧🇩", "🇧🇪", "🇧🇫", "🇧🇬", "🇧🇭", "🇧🇮", "🇧🇯", "🇧🇱", "🇧🇲", "🇧🇳", "🇧🇴", "🇧🇶", "🇧🇷", "🇧🇸", "🇧🇹", "🇧🇻", "🇧🇼", "🇧🇾", "🇧🇿", "🇨🇦", "🇨🇨", "🇨🇩", "🇨🇫", "🇨🇬", "🇨🇭", "🇨🇮", "🇨🇰", "🇨🇱", "🇨🇲", "🇨🇳", "🇨🇴", "🇨🇵", "🇨🇷", "🇨🇺", "🇨🇻", "🇨🇼", "🇨🇽", "🇨🇾", "🇨🇿", "🇩🇪", "🇬🇬", "🇬🇭", "🇬🇮", "🇬🇱", "🇬🇲", "🇬🇳", "🇬🇵", "🇬🇶", "🇬🇷", "🇬🇸", "🇬🇹", "🇬🇺", "🇬🇼", "🇬🇾", "🇭🇰", "🇭🇲", "🇭🇳", "🇭🇷", "🇭🇹", "🇭🇺", "🇮🇨", "🇮🇩", "🇮🇪", "🇮🇱", "🇮🇲", "🇮🇳", "🇮🇴", "🇮🇶", "🇮🇷", "🇮🇸", "🇮🇹", "🇯🇪", "🇯🇲"].shuffled()
+        }
+    }
+}
 
-        } label: {
-            Image(systemName: "flag.2.crossed")
+struct ThemeView: View {
+    var imageName: String
+    var text: String
+    var action: () -> Void
+
+    var body: some View {
+        VStack {
+            Button {
+                action()
+            } label: {
+                Image(systemName: imageName)
+            }
+            Text(text).font(.caption).foregroundColor(.blue)
         }
     }
 }
