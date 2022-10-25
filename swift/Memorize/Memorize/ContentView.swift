@@ -124,6 +124,7 @@ struct ThemeView: View {
             } label: {
                 Image(systemName: imageName)
             }
+            .font(.title)
             Text(text).font(.caption).foregroundColor(.blue)
         }
     }
