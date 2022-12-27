@@ -8,7 +8,8 @@
 import SwiftUI
 
 // ViewModel
-class EmojiMemoryGame {
+// ObservableObject: can publish that something changed. The class gets an `objectWillChange` property
+class EmojiMemoryGame: ObservableObject {
     static let emojis = ["🚕", "🚃", "🛵", "🚂", "🚄", "🚅", "🚆", "🚇", "🚈", "🚉", "🚊", "🚝", "🚞", "🚋", "🚌", "🚍", "🚎", "🚐", "🚑", "🚒", "🚓", "🚔", "🚖", "🚗", "🚘", "🚙", "🛻", "🚚", "🚛", "🚜"]
 
     static func createMemoryGame() -> MemoryGame<String> {
@@ -17,9 +18,15 @@ class EmojiMemoryGame {
         }
     }
 
-    private var model: MemoryGame<String> = createMemoryGame()
+    @Published private var model: MemoryGame<String> = createMemoryGame() // anytime the model changes, it will call `objectWillChange.send()`
 
     var cards: Array<MemoryGame<String>.Card> {
         return model.cards
+    }
+
+    // MARK: - Intent(s)
+    func choose(_ card: MemoryGame<String>.Card) {
+//        objectWillChange.send()
+        model.choose(card: card)
     }
 }

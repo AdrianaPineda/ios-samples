@@ -15,6 +15,7 @@
 		0122CE9E270E9074006A41E0 /* MemorizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0122CE9D270E9074006A41E0 /* MemorizeUITests.swift */; };
 		012CF4882908D0F100DA4749 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CF4872908D0F100DA4749 /* MemoryGame.swift */; };
 		012CF48A2908D42200DA4749 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CF4892908D42200DA4749 /* EmojiMemoryGame.swift */; };
+		012CF48C2910AF1900DA4749 /* ContentView-noMVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CF48B2910AF1900DA4749 /* ContentView-noMVVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0122CE9F270E9074006A41E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		012CF4872908D0F100DA4749 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		012CF4892908D42200DA4749 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
+		012CF48B2910AF1900DA4749 /* ContentView-noMVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-noMVVM.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +103,9 @@
 			children = (
 				012CF4872908D0F100DA4749 /* MemoryGame.swift */,
 				012CF4892908D42200DA4749 /* EmojiMemoryGame.swift */,
-				0122CE80270E9073006A41E0 /* MemorizeApp.swift */,
 				0122CE82270E9073006A41E0 /* ContentView.swift */,
+				0122CE80270E9073006A41E0 /* MemorizeApp.swift */,
+				012CF48B2910AF1900DA4749 /* ContentView-noMVVM.swift */,
 				0122CE84270E9074006A41E0 /* Assets.xcassets */,
 				0122CE89270E9074006A41E0 /* Info.plist */,
 				0122CE86270E9074006A41E0 /* Preview Content */,
@@ -267,6 +270,7 @@
 			files = (
 				012CF4882908D0F100DA4749 /* MemoryGame.swift in Sources */,
 				0122CE83270E9073006A41E0 /* ContentView.swift in Sources */,
+				012CF48C2910AF1900DA4749 /* ContentView-noMVVM.swift in Sources */,
 				0122CE81270E9073006A41E0 /* MemorizeApp.swift in Sources */,
 				012CF48A2908D42200DA4749 /* EmojiMemoryGame.swift in Sources */,
 			);
