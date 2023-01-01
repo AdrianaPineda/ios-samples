@@ -49,9 +49,7 @@ class EmojiMemoryGame: ObservableObject {
     @Published private var themeModel: MemoryTheme
 
     init() {
-        let themeModel = EmojiMemoryGame.createMemoryTheme()
-        self.themeModel = themeModel
-        self.gameModel = EmojiMemoryGame.createMemoryGame(theme: themeModel)
+        (self.themeModel, self.gameModel) = EmojiMemoryGame.buildModels()
     }
 
     var cards: Array<MemoryGame<String>.Card> {
@@ -73,8 +71,13 @@ class EmojiMemoryGame: ObservableObject {
     }
 
     func newGame() {
-        self.themeModel = EmojiMemoryGame.createMemoryTheme()
-        self.gameModel = EmojiMemoryGame.createMemoryGame(theme: themeModel)
+        (self.themeModel, self.gameModel) = EmojiMemoryGame.buildModels()
+    }
+
+    static func buildModels() -> (MemoryTheme, MemoryGame<String>) {
+        let themeModel = EmojiMemoryGame.createMemoryTheme()
+        let gameModel = EmojiMemoryGame.createMemoryGame(theme: themeModel)
+        return (themeModel, gameModel)
     }
 }
 
