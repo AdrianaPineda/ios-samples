@@ -13,10 +13,32 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var viewModel: EmojiMemoryGame // when this changes, body will be rebuilt
+    /// With @ObservedObject, when this changes, body will be rebuilt
+    @ObservedObject var viewModel: EmojiMemoryGame
 
     var body: some View {
         Text("Memorize!").font(.largeTitle)
+
+        Spacer()
+        Spacer()
+
+        HStack {
+            Button {
+                viewModel.newGame()
+            } label: {
+                Label("New Game", systemImage: "plus.circle")
+            }
+            .font(.title3)
+
+            Spacer()
+        }
+        .padding(.horizontal)
+
+        Spacer()
+        Spacer()
+
+        Text("Current Theme: \(viewModel.themeName)")
+
         ScrollView {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
                 ForEach(viewModel.cards) { card in
@@ -29,7 +51,7 @@ struct ContentView: View {
             }
 
         }
-        .foregroundColor(.red)
+        .foregroundColor(viewModel.themeColor)
         .padding(.horizontal)
 
     }
@@ -91,6 +113,8 @@ struct CardView: View {
                     .font(.largeTitle)
                     .lineLimit(nil)
                     .padding() // default padding, it might mean different things for different devices (watch, phone, ipad)
+            } else if card.isMatched {
+                shape.opacity(0.5)
             } else {
                 shape.fill()
             }

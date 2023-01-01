@@ -16,6 +16,7 @@
 		012CF4882908D0F100DA4749 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CF4872908D0F100DA4749 /* MemoryGame.swift */; };
 		012CF48A2908D42200DA4749 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CF4892908D42200DA4749 /* EmojiMemoryGame.swift */; };
 		012CF48C2910AF1900DA4749 /* ContentView-noMVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CF48B2910AF1900DA4749 /* ContentView-noMVVM.swift */; };
+		01526211296110A000908CC7 /* MemoryTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01526210296110A000908CC7 /* MemoryTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		012CF4872908D0F100DA4749 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		012CF4892908D42200DA4749 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		012CF48B2910AF1900DA4749 /* ContentView-noMVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-noMVVM.swift"; sourceTree = "<group>"; };
+		01526210296110A000908CC7 /* MemoryTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				012CF4872908D0F100DA4749 /* MemoryGame.swift */,
+				01526210296110A000908CC7 /* MemoryTheme.swift */,
 				012CF4892908D42200DA4749 /* EmojiMemoryGame.swift */,
 				0122CE82270E9073006A41E0 /* ContentView.swift */,
 				0122CE80270E9073006A41E0 /* MemorizeApp.swift */,
@@ -270,6 +273,7 @@
 			files = (
 				012CF4882908D0F100DA4749 /* MemoryGame.swift in Sources */,
 				0122CE83270E9073006A41E0 /* ContentView.swift in Sources */,
+				01526211296110A000908CC7 /* MemoryTheme.swift in Sources */,
 				012CF48C2910AF1900DA4749 /* ContentView-noMVVM.swift in Sources */,
 				0122CE81270E9073006A41E0 /* MemorizeApp.swift in Sources */,
 				012CF48A2908D42200DA4749 /* EmojiMemoryGame.swift in Sources */,
