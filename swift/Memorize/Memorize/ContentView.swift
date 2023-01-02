@@ -31,6 +31,8 @@ struct ContentView: View {
             .font(.title3)
 
             Spacer()
+
+            Text("Score \(viewModel.score)")
         }
         .padding(.horizontal)
 

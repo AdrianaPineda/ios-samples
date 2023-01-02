@@ -13,12 +13,14 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     struct Card: Identifiable {
         var isFaceUp: Bool = false
         var isMatched: Bool = false
+        var seen: Bool = false
         var content: CardContent
 
         var id: Int
     }
 
     private (set) var cards: Array<MemoryGame.Card>
+    private (set) var score: Int = 0
     private var indexOfFaceUpCard: Int?
 
     mutating func choose(card: MemoryGame.Card) {
@@ -29,11 +31,20 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
             if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                 cards[chosenIndex].isMatched = true
                 cards[potentialMatchIndex].isMatched = true
+                score += 2
+            }
+
+            if cards[chosenIndex].seen {
+                score -= 1
             }
 
             indexOfFaceUpCard = nil
         } else {
             for index in cards.indices {
+                if cards[index].isFaceUp {
+                    cards[index].seen = true
+                }
+
                 cards[index].isFaceUp = false
             }
 
