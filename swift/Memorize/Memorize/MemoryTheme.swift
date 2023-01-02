@@ -15,9 +15,16 @@ struct MemoryTheme {
     let numOfCards: Int
     let color: String
 
-    init(name: String, emojis: Set<String>, numOfCards: Int, color: String) {
+    init(name: String, emojis: Set<String>, numOfCards: Int = Int.max, color: String) {
         self.name = name
         self.numOfCards = min(numOfCards, emojis.count)
+        self.emojis = emojis.shuffled()
+        self.color = color
+    }
+
+    init(name: String, emojis: Set<String>, color: String) {
+        self.name = name
+        self.numOfCards = Int.random(in: 1...emojis.count)
         self.emojis = emojis.shuffled()
         self.color = color
     }
