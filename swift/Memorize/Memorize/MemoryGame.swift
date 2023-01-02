@@ -21,21 +21,28 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
 
     private (set) var cards: Array<MemoryGame.Card>
     private (set) var score: Int = 0
+    private (set) var lastCardChosenDate: Date?
     private var indexOfFaceUpCard: Int?
 
     mutating func choose(card: MemoryGame.Card) {
         guard let chosenIndex = cards.firstIndex(where: { $0.id == card.id } ) else { return }
         guard !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched else { return }
 
+        defer {
+            lastCardChosenDate = Date()
+        }
+
+        let scoreMultiplier = max(10 - secondsSinceLastCardChosen(), 1)
+
         if let potentialMatchIndex = indexOfFaceUpCard {
             if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                 cards[chosenIndex].isMatched = true
                 cards[potentialMatchIndex].isMatched = true
-                score += 2
+                score += 2 * scoreMultiplier
             }
 
             if cards[chosenIndex].seen {
-                score -= 1
+                score -= 1 * scoreMultiplier
             }
 
             indexOfFaceUpCard = nil
@@ -54,6 +61,12 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         cards[chosenIndex].isFaceUp.toggle()
         print("chosenCard = \(cards[chosenIndex])")
         print("cards = \n\(cards)")
+    }
+
+    func secondsSinceLastCardChosen() -> Int {
+        guard let lastCardChosenDate else { return 0 }
+
+        return Int(Date().timeIntervalSince(lastCardChosenDate))
     }
 
     // Custom implementation of `firstIndex`
