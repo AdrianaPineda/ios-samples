@@ -132,9 +132,12 @@ struct ThemeViewNoMVVM: View {
 
 // Views are immutable
 struct CardViewNoMVVM: View {
-    // `@State` changes var, its now a pointer to a boolean
+    // `@State` changes var, its now a pointer to a boolean (because View is read-only)
     // used for temp state or for state that only affects the way the view is displayed
     // without it, we couldn't modify the var
+    // Changes to @State var *will cause the View to rebuild its body*
+    // Must be private
+    // Use sparingly, we should keep the source of truth in the Model
     @State var isFaceUp = true
     var content: String
 
