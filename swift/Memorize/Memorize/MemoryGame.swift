@@ -14,9 +14,9 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         var isFaceUp: Bool = false
         var isMatched: Bool = false
         var seen: Bool = false
-        var content: CardContent
+        let content: CardContent
 
-        var id: Int
+        let id: Int
     }
 
     private (set) var cards: Array<MemoryGame.Card>

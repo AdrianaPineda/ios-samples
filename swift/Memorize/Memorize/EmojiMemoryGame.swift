@@ -11,22 +11,22 @@ import SwiftUI
 // ObservableObject: can publish that something changed. The class gets an `objectWillChange` property
 class EmojiMemoryGame: ObservableObject {
 
-    static var carsTheme: MemoryTheme {
+    private static var carsTheme: MemoryTheme {
         let emojis = ["🚕", "🚃", "🛵", "🚂", "🚄", "🚅", "🚆", "🚇", "🚈", "🚉", "🚊", "🚝", "🚞", "🚋", "🚌", "🚍", "🚎", "🚐", "🚑", "🚒", "🚓", "🚔", "🚖", "🚗", "🚘", "🚙", "🛻", "🚚", "🚛", "🚜"]
         return MemoryTheme(name: "cars", emojis: Set(emojis), numOfCards: 10, color: "green")
     }
 
-    static var foodTheme: MemoryTheme {
+    private static var foodTheme: MemoryTheme {
         let emojis = ["🍔", "🍇", "🍈", "🍉", "🍊", "🍋", "🍌", "🍍", "🥭", "🍎", "🍏", "🍐", "🍑", "🍒", "🍓", "🫐", "🥝", "🍅", "🫒", "🥥", "🥑", "🥕", "🌽", "🌶️", "🫑", "🥒", "🥬", "🥦", "🧄", "🧅", "🍄", "🥜", "🫘", "🌰", "🍞"]
         return MemoryTheme(name: "food", emojis: Set(emojis), numOfCards: 20, color: "purple")
     }
 
-    static var animalsTheme: MemoryTheme {
+    private static var animalsTheme: MemoryTheme {
         let emojis = ["🦍", "🦧", "🐶", "🐕", "🦮", "🐕‍🦺", "🐩", "🐺", "🦊", "🦝", "🐱", "🐈", "🐈‍⬛", "🦁", "🐯", "🐅", "🐆", "🐴", "🐎", "🦄", "🦓", "🦌", "🦬", "🐮", "🐂", "🐃", "🐄", "🐷", "🐖", "🐗", "🐏", "🐑", "🐐", "🐪", "🐫", "🐓", "🦉", "🐥", "🦩", "🦃", "🦜", "🦆", "🕊", "🦅", "🦢"]
         return MemoryTheme(name: "animals", emojis: Set(emojis), numOfCards: 80, color: "orange")
     }
 
-    static var flagsTheme: MemoryTheme {
+    private static var flagsTheme: MemoryTheme {
         let emojis = ["🏳️‍🌈", "🏳️‍⚧️", "🏴‍☠️", "🇦🇨", "🇦🇩", "🇦🇪", "🇦🇫", "🇦🇬", "🇦🇮", "🇦🇱", "🇦🇲", "🇦🇴", "🇦🇶", "🇦🇷", "🇦🇸", "🇦🇹", "🇦🇺", "🇦🇼", "🇦🇽", "🇦🇿", "🇧🇦", "🇧🇧", "🇧🇩", "🇧🇪", "🇧🇫", "🇧🇬", "🇧🇭", "🇧🇮", "🇧🇯", "🇧🇱", "🇧🇲", "🇧🇳", "🇧🇴", "🇧🇶", "🇧🇷", "🇧🇸", "🇧🇹", "🇧🇻", "🇧🇼", "🇧🇾", "🇧🇿", "🇨🇦", "🇨🇨", "🇨🇩", "🇨🇫", "🇨🇬", "🇨🇭", "🇨🇮", "🇨🇰", "🇨🇱", "🇨🇲", "🇨🇳", "🇨🇴", "🇨🇵", "🇨🇷", "🇨🇺", "🇨🇻", "🇨🇼", "🇨🇽", "🇨🇾", "🇨🇿", "🇩🇪", "🇬🇬", "🇬🇭", "🇬🇮", "🇬🇱", "🇬🇲", "🇬🇳", "🇬🇵", "🇬🇶", "🇬🇷", "🇬🇸", "🇬🇹", "🇬🇺", "🇬🇼", "🇬🇾", "🇭🇰", "🇭🇲", "🇭🇳", "🇭🇷", "🇭🇹", "🇭🇺", "🇮🇨", "🇮🇩", "🇮🇪", "🇮🇱", "🇮🇲", "🇮🇳", "🇮🇴", "🇮🇶", "🇮🇷", "🇮🇸", "🇮🇹", "🇯🇪", "🇯🇲"]
         return MemoryTheme(name: "flags", emojis: Set(emojis), numOfCards: 100, color: "yellow")
     }
@@ -44,9 +44,9 @@ class EmojiMemoryGame: ObservableObject {
 
     /// With @Published, anytime the model changes, it will call `objectWillChange.send()`
     /// We are able to detect changes in the model because swift can detect changes in structs, can't do it in classes
-    @Published private var gameModel: MemoryGame<String>
+    @Published private (set) var gameModel: MemoryGame<String>
 
-    @Published private var themeModel: MemoryTheme
+    @Published private (set) var themeModel: MemoryTheme
 
     init() {
         (self.themeModel, self.gameModel) = EmojiMemoryGame.buildModels()
