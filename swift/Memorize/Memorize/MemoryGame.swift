@@ -11,9 +11,9 @@ import Foundation
 struct MemoryGame<CardContent> where CardContent: Equatable {
 
     struct Card: Identifiable {
-        var isFaceUp: Bool = false
-        var isMatched: Bool = false
-        var seen: Bool = false
+        var isFaceUp = false
+        var isMatched = false
+        var seen = false
         let content: CardContent
 
         let id: Int
@@ -22,7 +22,18 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     private (set) var cards: Array<MemoryGame.Card>
     private (set) var score: Int = 0
     private (set) var lastCardChosenDate: Date?
-    private var indexOfFaceUpCard: Int?
+    private var indexOfFaceUpCard: Int? {
+        get { cards.indices.filter{ cards[$0].isFaceUp }.oneAndOnly }
+        set {
+            cards.indices.forEach { index in
+                if cards[index].isFaceUp {
+                    cards[index].seen = true
+                }
+
+                cards[index].isFaceUp = index == newValue
+            }
+        }
+    }
 
     mutating func choose(card: MemoryGame.Card) {
         guard let chosenIndex = cards.firstIndex(where: { $0.id == card.id } ) else { return }
@@ -45,20 +56,12 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                 score -= 1 * scoreMultiplier
             }
 
-            indexOfFaceUpCard = nil
+            cards[chosenIndex].isFaceUp = true
+
         } else {
-            for index in cards.indices {
-                if cards[index].isFaceUp {
-                    cards[index].seen = true
-                }
-
-                cards[index].isFaceUp = false
-            }
-
             indexOfFaceUpCard = chosenIndex
         }
 
-        cards[chosenIndex].isFaceUp.toggle()
         print("chosenCard = \(cards[chosenIndex])")
         print("cards = \n\(cards)")
     }
@@ -81,7 +84,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
 
     init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent) {
-        cards = Array<Card>()
+        cards = []
         for pairIndex in 0..<numberOfPairsOfCards {
             let content = createCardContent(pairIndex)
             cards.append(Card(content: content, id: pairIndex*2))
@@ -89,5 +92,17 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         }
 
         cards.shuffle()
+    }
+}
+
+extension Array {
+    var oneAndOnly: Element? {
+        if self.count == 1 {
+            return self.first
+        } else {
+            return nil
+        }
+
+//        return self.count == 1 ? self.first : nil
     }
 }

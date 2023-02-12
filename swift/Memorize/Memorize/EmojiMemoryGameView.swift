@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  EmojiMemoryGameView.swift
 //  Memorize
 //
 //  Created by Adriana Pineda on 10/6/21.
@@ -12,9 +12,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct EmojiMemoryGameView: View {
     /// With @ObservedObject, when this changes, body will be rebuilt
-    @ObservedObject var viewModel: EmojiMemoryGame
+    @ObservedObject var game: EmojiMemoryGame
 
     var body: some View {
         Text("Memorize!").font(.largeTitle)
@@ -24,7 +24,7 @@ struct ContentView: View {
 
         HStack {
             Button {
-                viewModel.newGame()
+                game.newGame()
             } label: {
                 Label("New Game", systemImage: "plus.circle")
             }
@@ -32,28 +32,28 @@ struct ContentView: View {
 
             Spacer()
 
-            Text("Score \(viewModel.score)")
+            Text("Score \(game.score)")
         }
         .padding(.horizontal)
 
         Spacer()
         Spacer()
 
-        Text("Current Theme: \(viewModel.themeName)")
+        Text("Current Theme: \(game.themeName)")
 
         ScrollView {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
-                ForEach(viewModel.cards) { card in
-                    CardView(card: card)
+                ForEach(game.cards) { card in
+                    CardView(card)
                         .aspectRatio(2/3, contentMode: .fit)
                         .onTapGesture {
-                            viewModel.choose(card)
+                            game.choose(card)
                         }
                 }
             }
 
         }
-        .foregroundColor(viewModel.themeColor)
+        .foregroundColor(game.themeColor)
         .padding(.horizontal)
 
     }
@@ -103,7 +103,11 @@ struct ThemeView: View {
 
 // Views are immutable
 struct CardView: View {
-    let card: MemoryGame<String>.Card
+    private let card: EmojiMemoryGame.Card
+
+    init(_ card: EmojiMemoryGame.Card) {
+        self.card = card
+    }
 
     var body: some View {
         ZStack {
@@ -124,14 +128,14 @@ struct CardView: View {
     }
 }
 
-// Glues the preview to the ContentView:
+// Glues the preview to the EmojiMemoryGameView:
 // No need to modify it
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let game = EmojiMemoryGame()
-        ContentView(viewModel: game)
+        EmojiMemoryGameView(game: game)
             .preferredColorScheme(.dark)
-        ContentView(viewModel: game)
+        EmojiMemoryGameView(game: game)
             .preferredColorScheme(.light)
     }
 }

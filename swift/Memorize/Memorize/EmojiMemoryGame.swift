@@ -11,6 +11,8 @@ import SwiftUI
 // ObservableObject: can publish that something changed. The class gets an `objectWillChange` property
 class EmojiMemoryGame: ObservableObject {
 
+    typealias Card = MemoryGame<String>.Card
+
     private static var carsTheme: MemoryTheme {
         let emojis = ["🚕", "🚃", "🛵", "🚂", "🚄", "🚅", "🚆", "🚇", "🚈", "🚉", "🚊", "🚝", "🚞", "🚋", "🚌", "🚍", "🚎", "🚐", "🚑", "🚒", "🚓", "🚔", "🚖", "🚗", "🚘", "🚙", "🛻", "🚚", "🚛", "🚜"]
         return MemoryTheme(name: "cars", emojis: Set(emojis), numOfCards: 10, color: "green")
@@ -52,7 +54,7 @@ class EmojiMemoryGame: ObservableObject {
         (self.themeModel, self.gameModel) = EmojiMemoryGame.buildModels()
     }
 
-    var cards: Array<MemoryGame<String>.Card> {
+    var cards: Array<Card> {
         return gameModel.cards
     }
 
@@ -69,7 +71,7 @@ class EmojiMemoryGame: ObservableObject {
     }
 
     // MARK: - Intent(s)
-    func choose(_ card: MemoryGame<String>.Card) {
+    func choose(_ card: Card) {
 //        objectWillChange.send()
         gameModel.choose(card: card)
     }
