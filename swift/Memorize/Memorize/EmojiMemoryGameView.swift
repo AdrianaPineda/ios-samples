@@ -20,7 +20,8 @@ struct EmojiMemoryGameView: View {
         Text("Memorize!").font(.largeTitle)
 
         Spacer()
-        Spacer()
+        Spacer() // always takes all the space offered to it. Draws nothing. The minLength defaults to the most likely spacing you'd want on a given platform
+//        Divider() // draws a dividing line cross-wise to the way the stack is laying out. Takes the minimum space needed to fit the line in the direction the stack is going
 
         HStack {
             Button {
@@ -40,6 +41,9 @@ struct EmojiMemoryGameView: View {
         Spacer()
 
         Text("Current Theme: \(game.themeName)")
+
+        // LazyHStack & LazyVStack => "lazy" versions of the stack, they don't build any of their Views that are not visible, they size themselves to fir their Views
+        // ZStack => sizes itself to fit its children
 
         ScrollView {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
@@ -109,7 +113,7 @@ struct CardView: View {
         self.card = card
     }
 
-    var body: some View {
+    var bodyOld: some View {
         ZStack {
             let shape = RoundedRectangle(cornerRadius: 20)
             if card.isFaceUp {
@@ -126,6 +130,36 @@ struct CardView: View {
             }
         }
     }
+
+    var body: some View {
+        // GeometryReader will use all of the space that was offered to it
+        GeometryReader { geometry in
+            ZStack {
+                let shape = RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius)
+                if card.isFaceUp {
+                    shape.fill().foregroundColor(.white)
+                    shape.strokeBorder(lineWidth: DrawingConstants.lineWidth) // strokeBorder does it on the inside
+                    Text(card.content).font(font(in: geometry.size))
+                        .lineLimit(nil)
+                } else if card.isMatched {
+                    shape.opacity(DrawingConstants.opacity)
+                } else {
+                    shape.fill()
+                }
+            }
+        }
+    }
+
+    private func font(in size: CGSize) -> Font {
+        Font.system(size: min(size.width, size.height) * DrawingConstants.fontScale)
+    }
+
+    private struct DrawingConstants {
+        static let cornerRadius: CGFloat = 20
+        static let lineWidth: CGFloat = 3
+        static let fontScale: CGFloat = 0.8
+        static let opacity: CGFloat = 0.5
+    }
 }
 
 // Glues the preview to the EmojiMemoryGameView:
@@ -139,3 +173,5 @@ struct ContentView_Previews: PreviewProvider {
             .preferredColorScheme(.light)
     }
 }
+
+// @ViewBuilder: combines list of views. The contents is just a list of Views
