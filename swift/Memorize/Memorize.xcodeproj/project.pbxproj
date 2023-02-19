@@ -18,6 +18,7 @@
 		012CF48C2910AF1900DA4749 /* ContentView-noMVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CF48B2910AF1900DA4749 /* ContentView-noMVVM.swift */; };
 		01526211296110A000908CC7 /* MemoryTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01526210296110A000908CC7 /* MemoryTheme.swift */; };
 		0152621329A1A90800908CC7 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0152621229A1A90800908CC7 /* AspectVGrid.swift */; };
+		0152621529A1B0A800908CC7 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0152621429A1B0A800908CC7 /* Pie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		012CF48B2910AF1900DA4749 /* ContentView-noMVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-noMVVM.swift"; sourceTree = "<group>"; };
 		01526210296110A000908CC7 /* MemoryTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTheme.swift; sourceTree = "<group>"; };
 		0152621229A1A90800908CC7 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
+		0152621429A1B0A800908CC7 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				012CF4872908D0F100DA4749 /* MemoryGame.swift */,
 				01526210296110A000908CC7 /* MemoryTheme.swift */,
 				0152621229A1A90800908CC7 /* AspectVGrid.swift */,
+				0152621429A1B0A800908CC7 /* Pie.swift */,
 				012CF4892908D42200DA4749 /* EmojiMemoryGame.swift */,
 				0122CE82270E9073006A41E0 /* EmojiMemoryGameView.swift */,
 				0122CE80270E9073006A41E0 /* MemorizeApp.swift */,
@@ -276,6 +279,7 @@
 			files = (
 				012CF4882908D0F100DA4749 /* MemoryGame.swift in Sources */,
 				0122CE83270E9073006A41E0 /* EmojiMemoryGameView.swift in Sources */,
+				0152621529A1B0A800908CC7 /* Pie.swift in Sources */,
 				0152621329A1A90800908CC7 /* AspectVGrid.swift in Sources */,
 				01526211296110A000908CC7 /* MemoryTheme.swift in Sources */,
 				012CF48C2910AF1900DA4749 /* ContentView-noMVVM.swift in Sources */,
