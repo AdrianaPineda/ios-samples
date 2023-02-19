@@ -45,6 +45,56 @@ struct EmojiMemoryGameView: View {
         // LazyHStack & LazyVStack => "lazy" versions of the stack, they don't build any of their Views that are not visible, they size themselves to fir their Views
         // ZStack => sizes itself to fit its children
 
+        AspectVGrid(items: game.cards, aspectRatio: 2/3, content: { card in
+            cardView(for: card)
+        })
+        .foregroundColor(game.themeColor)
+        .padding(.horizontal)
+
+    }
+
+    @ViewBuilder
+    private func cardView(for card: EmojiMemoryGame.Card) -> some View {
+        if card.isMatched && !card.isFaceUp {
+            Rectangle().opacity(0)
+        } else {
+            CardView(card)
+                .padding(4)
+                .onTapGesture {
+                    game.choose(card)
+                }
+        }
+    }
+
+    func previousBody() {
+        Text("Memorize!").font(.largeTitle)
+
+        Spacer()
+        Spacer() // always takes all the space offered to it. Draws nothing. The minLength defaults to the most likely spacing you'd want on a given platform
+//        Divider() // draws a dividing line cross-wise to the way the stack is laying out. Takes the minimum space needed to fit the line in the direction the stack is going
+
+        HStack {
+            Button {
+                game.newGame()
+            } label: {
+                Label("New Game", systemImage: "plus.circle")
+            }
+            .font(.title3)
+
+            Spacer()
+
+            Text("Score \(game.score)")
+        }
+        .padding(.horizontal)
+
+        Spacer()
+        Spacer()
+
+        Text("Current Theme: \(game.themeName)")
+
+        // LazyHStack & LazyVStack => "lazy" versions of the stack, they don't build any of their Views that are not visible, they size themselves to fir their Views
+        // ZStack => sizes itself to fit its children
+
         ScrollView {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
                 ForEach(game.cards) { card in
@@ -155,9 +205,9 @@ struct CardView: View {
     }
 
     private struct DrawingConstants {
-        static let cornerRadius: CGFloat = 20
+        static let cornerRadius: CGFloat = 10
         static let lineWidth: CGFloat = 3
-        static let fontScale: CGFloat = 0.8
+        static let fontScale: CGFloat = 0.75
         static let opacity: CGFloat = 0.5
     }
 }
