@@ -189,7 +189,7 @@ struct CardView: View {
                 if card.isFaceUp {
                     shape.fill().foregroundColor(.white)
                     shape.strokeBorder(lineWidth: DrawingConstants.lineWidth) // strokeBorder does it on the inside
-                    Circle().padding(4).opacity(0.5)
+                    Pie(startAngle: Angle(degrees: 270), endAngle: Angle(degrees: 30)).padding(4).opacity(0.5)
                     Text(card.content).font(font(in: geometry.size))
                         .lineLimit(nil)
                 } else if card.isMatched {
@@ -226,3 +226,4 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 // @ViewBuilder: combines list of views. The contents is just a list of Views
+// Shape:
